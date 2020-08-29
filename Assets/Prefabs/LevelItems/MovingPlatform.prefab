@@ -390,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos1Ref: {fileID: 7797222126675721319}
   pos2Ref: {fileID: 7032371275999587393}
-  timeToWaitDefault: 1.99
+  timeToWaitDefault: 1.5
   moveSpeed: 4
   player: {fileID: 0}
 --- !u!61 &285471179
