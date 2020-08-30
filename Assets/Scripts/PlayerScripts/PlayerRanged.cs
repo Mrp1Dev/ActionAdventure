@@ -92,8 +92,10 @@ public class PlayerRanged : MonoBehaviour
 
     private void startShooting()
     {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);         
         isShooting = true;
         playerMovement.canMove = false;
+        
     }
 
     public void spawnBullet(ArrowType arrowType)
