@@ -820,9 +820,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 796423245}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonEventHandler, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OptionsButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 796423245}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonEventHandler, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 796423245}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonEventHandler, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -1334,7 +1334,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 796423244}
-  - component: {fileID: 796423245}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -1366,18 +1365,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &796423245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796423243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6448b391fa7fde4419d94ead7a89b3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &969476889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,6 +1971,7 @@ GameObject:
   - component: {fileID: 1460673738}
   - component: {fileID: 1460673737}
   - component: {fileID: 1460673736}
+  - component: {fileID: 1460673739}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -2054,9 +2042,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 796423245}
+      - m_Target: {fileID: 1460673734}
         m_TargetAssemblyTypeName: ButtonEventHandler, Assembly-CSharp
-        m_MethodName: PlayButtonClicked
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2104,6 +2092,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460673734}
   m_CullTransparentMesh: 0
+--- !u!114 &1460673739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460673734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7598a0e187401c345946b482954bc3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toShow: {fileID: 0}
 --- !u!1 &1554564460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2005604032}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonEventHandler, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -2655,7 +2656,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005604031}
-  - component: {fileID: 2005604032}
   m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
@@ -2685,18 +2685,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2005604032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005604030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6448b391fa7fde4419d94ead7a89b3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2013547572
 GameObject:
   m_ObjectHideFlags: 0

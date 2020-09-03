@@ -3,23 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum MenuType { Main, Options, About, LevelSelect}
+
+public enum MenuGroup { Menu, Options, About, LevelSelect, Shop}
 
 public class ButtonEventHandler : MonoBehaviour
 {
+    public static List<ButtonEventHandler> allMenus = new List<ButtonEventHandler>();
+    [SerializeField] private MenuGroup currentMenuGroup;
 
-    private event Action<MenuType> DisableOthers;
-    [SerializeField] MenuType menuGroup;
-
-    private void Awake()
+    private void OnEnable()
     {
-        this.DisableOthers += MenuTypeCheck;
+        allMenus.Add(this);
     }
 
-    void MenuTypeCheck(MenuType menuType)
+    private void OnDisable()
     {
-        if (true) { }
+        allMenus.Remove(this);
     }
+
 
     public void PlayButtonClicked()
     {
@@ -28,8 +29,17 @@ public class ButtonEventHandler : MonoBehaviour
 
     public void OptionsButtonClicked()
     {
-        DisableOthers(menuGroup);
+        DisableOthers(MenuGroup.Options);
     }
 
-    
+    private void DisableOthers(MenuGroup except)
+    {
+        foreach(ButtonEventHandler menu in allMenus)
+        {
+            if (menu.currentMenuGroup != except)
+            {
+                menu.gameObject.SetActive(false);
+            }
+        }
+    }
 }
