@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayButton : MonoBehaviour
+public class BackButton : MonoBehaviour
 {
     [SerializeField] GameObject toShow;
 
@@ -11,7 +9,6 @@ public class PlayButton : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
     }
-
     public void OnClick()
     {
         MenuManager.instance.ShowGroup(toShow);
