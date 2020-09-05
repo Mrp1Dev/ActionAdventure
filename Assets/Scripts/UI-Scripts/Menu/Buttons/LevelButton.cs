@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class LevelButton : MonoBehaviour
 {
     [SerializeField] private int levelToOpen;
-
+    [SerializeField] private Animator transition;// the black image that slowly goes up in darkness.
+    private bool hasTransitionStarted = false;
     public void OnClick()
     {
-        SceneManager.LoadSceneAsync(levelToOpen);
-        
+        transition.SetTrigger("CallTransition");
+        hasTransitionStarted = true;
     }
 
     private void Awake()
@@ -23,6 +24,15 @@ public class LevelButton : MonoBehaviour
         if (text)
         {
             text.text = levelToOpen.ToString();
+        }
+    }
+
+    private void Update()
+    {
+        if (hasTransitionStarted)
+        {
+            if (transition.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+                SceneManager.LoadScene(levelToOpen);
         }
     }
 }
