@@ -14,6 +14,7 @@ public class LevelButton : MonoBehaviour
     {
         transition.SetTrigger("CallTransition");
         hasTransitionStarted = true;
+       
     }
 
     private void Awake()
@@ -31,8 +32,11 @@ public class LevelButton : MonoBehaviour
     {
         if (hasTransitionStarted)
         {
-            if (transition.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            if (transition.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            {
                 SceneManager.LoadScene(levelToOpen);
+            }
+
         }
     }
 }
