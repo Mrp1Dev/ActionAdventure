@@ -28,7 +28,7 @@ public class EnemyCombat : MonoBehaviour
     public Transform attackPos;
     public float attackRange;
 
-
+    [SerializeField] private bool bossMode=false;
     private void Awake()
     {
         bloodParticle = GetComponentInChildren<ParticleSystem>();
@@ -65,11 +65,15 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public void takeDamage(float damageGiven)
+    public void takeDamage(float damageGiven, bool isPoison)
     {
         health -= damageGiven;
-        animator.SetTrigger("TakeHit");
-        takingHit = true;
+        if (!isPoison)
+        {
+            animator.SetTrigger("TakeHit");
+            takingHit = true;
+        }
+
         canAttack = true;
 
         CameraShaker.Instance.ShakeOnce(3f, 2f, 0.1f, 0.1f);
