@@ -65,7 +65,7 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public void takeDamage(float damageGiven, bool isPoison)
+    public void takeDamage(float damageGiven, bool isPoison=false)
     {
         health -= damageGiven;
         if (!isPoison)
