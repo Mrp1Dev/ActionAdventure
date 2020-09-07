@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GetHealth : MonoBehaviour
+public class GetBossHealth : MonoBehaviour
 {
-    private PlayerCombat playerCombat;
+    [SerializeField] EnemyCombat enemyCombat;
     private Slider slider;
     // Start is called before the first frame update
     void Start()
     {
-        playerCombat = GameObject.FindObjectOfType<PlayerCombat>();
         slider = GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = (playerCombat.Health / playerCombat.DefaultHealth);
+        slider.value = (enemyCombat.health / enemyCombat.StartHealth);
     }
 }

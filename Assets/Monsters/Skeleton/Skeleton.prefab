@@ -128,6 +128,8 @@ MonoBehaviour:
   dead: 0
   attackPos: {fileID: 5448027398780540903}
   attackRange: 0.96
+  attackDistance: 1.5
+  bossMode: 0
 --- !u!1 &3661576050005259857
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ Animator:
   m_GameObject: {fileID: 6522046040110405665}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 69bbf2f52f3107d4e8610153b4f52c86, type: 2}
+  m_Controller: {fileID: 9100000, guid: f86c7eefc29d2dd4383a8984ade80052, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

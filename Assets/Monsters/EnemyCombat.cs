@@ -7,6 +7,7 @@ public class EnemyCombat : MonoBehaviour
 {
     public float damage;
     public float health;
+    public float StartHealth { get; set; }
     private Animator animator;
     private Rigidbody2D rb;
     public float deathKnockbackPower;
@@ -29,6 +30,7 @@ public class EnemyCombat : MonoBehaviour
     public float attackRange;
     [SerializeField] float attackDistance=1.5f;
 
+
     [SerializeField] private bool bossMode=false;
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class EnemyCombat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartHealth = health;
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
