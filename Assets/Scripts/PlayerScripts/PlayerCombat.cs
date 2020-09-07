@@ -97,7 +97,6 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<EnemyCombat>().takeDamage(damage);
-            enemies[i].GetComponent<EnemyAI>().HasSeenplayer = true;
             if (doKnockback)
             {
                 enemies[i].GetComponent<EnemyCombat>().StartCoroutine("knockback");
@@ -144,6 +143,7 @@ public class PlayerCombat : MonoBehaviour
         if (health <= 0)
         {
             GetComponent<Collider2D>().enabled = false;
+            
             GetComponent<PlayerMovement>().enabled = false;
             Camera.current.transform.GetComponentInParent<CameraFollow>().enabled = false;
             Vector2 knockbackVector = new Vector2(2500 * (transform.localScale.x * -1f), 0f);

@@ -50,7 +50,7 @@ public class EnemyAI : MonoBehaviour
         if (hasSeenPlayer && Mathf.Abs(playerPos.y - transform.position.y) < yLevelDif && dist<followDistance)
         {
             followPlayer();
-            
+            Debug.Log("CALLED");
         }
         else
         {
@@ -141,7 +141,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public bool HasSeenplayer
+    public bool HasSeenPlayer
     {
         get { return hasSeenPlayer; }
         set { hasSeenPlayer = value; }

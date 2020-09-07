@@ -27,6 +27,7 @@ public class EnemyCombat : MonoBehaviour
 
     public Transform attackPos;
     public float attackRange;
+    [SerializeField] float attackDistance=1.5f;
 
     [SerializeField] private bool bossMode=false;
     private void Awake()
@@ -59,7 +60,7 @@ public class EnemyCombat : MonoBehaviour
 
         dist = player.transform.position.x - transform.position.x;
 
-        if (Mathf.Abs(dist) < 1.5f && !dead && !takingHit && canAttack && onSamePlatform)
+        if (Mathf.Abs(dist) < attackDistance && !dead && !takingHit && canAttack && onSamePlatform)
         {
             attack();
         }
@@ -67,6 +68,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void takeDamage(float damageGiven, bool isPoison=false)
     {
+        GetComponent<EnemyAI>().HasSeenPlayer = true;
         health -= damageGiven;
         if (!isPoison)
         {
@@ -86,8 +88,14 @@ public class EnemyCombat : MonoBehaviour
             GetComponent<EnemyAI>().enabled = false;
 
             animator.SetBool("Dead", dead);
-            deathKnockback();
-            
+            if (bossMode)
+            {
+                rb.isKinematic = true;
+            }
+            else
+            {
+                deathKnockback();
+            }          
             GetComponent<Collider2D>().enabled = false;
             Debug.Log("Death has seen this enemy :D");
         }
@@ -108,7 +116,8 @@ public class EnemyCombat : MonoBehaviour
 
     public void callDie()
     {
-        Invoke("die", 1f);
+        if(!bossMode)
+            Invoke("die", 1f);
     }
 
     private void deathKnockback()
@@ -127,6 +136,7 @@ public class EnemyCombat : MonoBehaviour
 
         GetComponent<EnemyAI>().enabled = false;
         yield return new WaitForSeconds(1f);
+        if(!dead)
         GetComponent<EnemyAI>().enabled = true;
 
     }
@@ -166,7 +176,7 @@ public class EnemyCombat : MonoBehaviour
     {
         for (int i = 0; i < cycles; i++)
         {
-            takeDamage(damage);
+            takeDamage(damage, true);
             yield return new WaitForSecondsRealtime(timePerCycle);
         }
         yield return null;

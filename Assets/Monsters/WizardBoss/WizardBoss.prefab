@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3683059026675113481}
   - component: {fileID: 8322945730681683132}
   - component: {fileID: -2468216638761459881}
-  - component: {fileID: 3346179516273712275}
   m_Layer: 8
   m_Name: WizardBoss
   m_TagString: Enemy
@@ -99,11 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultFacingRight: 0
-  maxDistance: 3
+  maxDistance: 5
   followDistance: 100
   yLevelDif: 4
   rb: {fileID: 2036125449544629092}
-  moveSpeed: 5
+  moveSpeed: 3.5
   fallDamageHeight: 3
   fallDamagePerMetre: 50
 --- !u!114 &-2468216638761459881
@@ -128,30 +127,9 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   dead: 0
   attackPos: {fileID: 5448027398780540903}
-  attackRange: 0.96
---- !u!114 &3346179516273712275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088945933659998831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2073973ba3cc0fe479f31811ca074ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  health: 0
-  deathKnockbackPower: 0
-  knockbackPower: 0
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  timeBetweenAttacks: 0
-  dead: 0
-  attackPos: {fileID: 0}
-  attackRange: 0
+  attackRange: 4.49
+  attackDistance: 5
+  bossMode: 1
 --- !u!1 &3661576050005259857
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3661576050005259857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16, y: 0, z: 0}
+  m_LocalPosition: {x: 2.67, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1088945933659998819}
