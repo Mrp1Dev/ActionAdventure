@@ -71,15 +71,17 @@ public class EnemyCombat : MonoBehaviour
 
     public void takeDamage(float damageGiven, bool isPoison=false)
     {
+        isAttacking = false;
         GetComponent<EnemyAI>().HasSeenPlayer = true;
         health -= damageGiven;
         if (!isPoison)
         {
             animator.SetTrigger("TakeHit");
             takingHit = true;
+            canAttack = true;
         }
 
-        canAttack = true;
+
 
         CameraShaker.Instance.ShakeOnce(3f, 2f, 0.1f, 0.1f);
         
@@ -141,8 +143,8 @@ public class EnemyCombat : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if(!dead)
         GetComponent<EnemyAI>().enabled = true;
-
     }
+    
 
     void die()
     {
@@ -156,7 +158,17 @@ public class EnemyCombat : MonoBehaviour
 
     void attack()
     {
-        animator.SetTrigger("Attack");
+        if(bossMode && health<(0.5*StartHealth))
+        {
+            animator.SetTrigger("Attack2");
+            Debug.Log("This 2");
+        }
+        else
+        {
+            animator.SetTrigger("Attack");
+            Debug.Log("This 1");
+        }
+
         isAttacking = true;
         canAttack = false;
         rb.velocity = new Vector2(0f, rb.velocity.y);

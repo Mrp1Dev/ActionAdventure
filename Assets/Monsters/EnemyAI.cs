@@ -50,7 +50,6 @@ public class EnemyAI : MonoBehaviour
         if (hasSeenPlayer && Mathf.Abs(playerPos.y - transform.position.y) < yLevelDif && dist<followDistance)
         {
             followPlayer();
-            Debug.Log("CALLED");
         }
         else
         {
