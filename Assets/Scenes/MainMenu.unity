@@ -1195,6 +1195,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100682927}
   m_CullTransparentMesh: 0
+--- !u!1 &111471736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111471737}
+  - component: {fileID: 111471738}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111471737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111471736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 556.5925, y: 282.5413, z: -47.71037}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &111471738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111471736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8a48eadf1b35e44911f06a45c955ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SaveData:
+    damage: 20
+    maxHealth: 100
+    rangedDamage: 8
+    levelsUnlocked: 1
+    arrowAmount: 102700000a00000002000000
 --- !u!1 &125762950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &125762951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4872,7 +4921,6 @@ GameObject:
   - component: {fileID: 900327418}
   - component: {fileID: 900327417}
   - component: {fileID: 900327416}
-  - component: {fileID: 900327420}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -5006,19 +5054,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900327414}
   m_CullTransparentMesh: 0
---- !u!114 &900327420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900327414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83fe800a00c51bc40a1222c064832ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toShow: {fileID: 0}
 --- !u!1 &903766892
 GameObject:
   m_ObjectHideFlags: 0
@@ -8117,6 +8152,7 @@ GameObject:
   - component: {fileID: 1616060899}
   - component: {fileID: 1616060898}
   - component: {fileID: 1616060897}
+  - component: {fileID: 1616060900}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -8225,6 +8261,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616060895}
   m_CullTransparentMesh: 0
+--- !u!114 &1616060900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616060895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ebb0eb4891e5741bb878862b9a2205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowType: 1
+  cost: 0
+  increment: 5
 --- !u!1 &1661951791
 GameObject:
   m_ObjectHideFlags: 0
