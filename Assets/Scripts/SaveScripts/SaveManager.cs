@@ -1,29 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
-    public SaveData SaveData = new SaveData()
-    {
-        maxHealth = 100f,
-        damage = 20f,
-        rangedDamage = 8f,
-        levelsUnlocked = 1,
-        arrowAmount = new int[] { 10000, 10, 2 }
-    };
+    [HideInInspector] public SaveData SaveData = new SaveData();
 
     void Awake()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
         Load();
-    }
-
-    private void Start()
-    {
+        SaveData.DataUpdated += Save;
 
     }
 
@@ -43,6 +34,14 @@ public class SaveManager : MonoBehaviour
         if (data != null)
         {
             SaveData = data;
+
         }
+
+    }
+
+    public void Delete()
+    {
+        SaveStreamer.DeleteSaves();
+        SaveData = new SaveData();
     }
 }

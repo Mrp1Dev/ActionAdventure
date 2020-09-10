@@ -17,8 +17,7 @@ public class ArrowBuyButton : MonoBehaviour
     void OnClick()
     {
         SaveManager saveManager = SaveManager.instance;
-        saveManager.SaveData.arrowAmount[(int)arrowType] += increment;
-        saveManager.Save();
-        Debug.Log(saveManager.SaveData.arrowAmount[(int)arrowType]);
+        saveManager.SaveData.SetArrowAmount((int)arrowType, increment);
+        Debug.Log($"{saveManager.SaveData.ArrowAmount[(int)arrowType]} {arrowType}");
     }
 }
