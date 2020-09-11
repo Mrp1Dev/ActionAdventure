@@ -15,7 +15,6 @@ public class SaveManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Load();
         SaveData.DataUpdated += Save;
-
     }
 
     void OnDestroy()

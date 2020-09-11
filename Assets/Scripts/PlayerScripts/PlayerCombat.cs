@@ -168,7 +168,11 @@ public class PlayerCombat : MonoBehaviour
 
 
 
-    public float DefaultHealth => defaultHealth;
+    public float DefaultHealth
+    {
+        get { return defaultHealth; }
+        set { defaultHealth = value; }
+    }
     public float Health => health;
 
     public Transform AttackPos => attackPos;

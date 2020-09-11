@@ -6,38 +6,38 @@ using UnityEngine;
 [Serializable]
 public class SaveData 
 {
-    [SerializeField] private float damage = 20f;
-    [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private float rangedDamage = 8f;
+    [SerializeField] private int damageLevel = 1;
+    [SerializeField] private int maxHealthLevel = 1;
+    [SerializeField] private int rangedDamageLevel = 1;
     [SerializeField] private int levelsUnlocked = 1;
     [SerializeField] private int[] arrowAmount = new int[] { 10000, 10, 2 };
 
     public event Action DataUpdated;
 
-    public float Damage
+    public int DamageLevel
     {
-        get { return damage; }
+        get { return damageLevel; }
         set
         {
-            damage = value;
+            damageLevel = value;
             DataUpdated?.Invoke();
         }
     }
-    public float MaxHealth
+    public int MaxHealthLevel
     {
-        get { return maxHealth; }
+        get { return maxHealthLevel; }
         set
         {
-            maxHealth = value;
+            maxHealthLevel = value;
             DataUpdated?.Invoke();
         }
     }
-    public float RangedDamage
+    public int RangedDamageLevel
     {
-        get { return rangedDamage; }
+        get { return rangedDamageLevel; }
         set
         {
-            rangedDamage = value;
+            rangedDamageLevel = value;
             DataUpdated?.Invoke();
         }
     }

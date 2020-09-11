@@ -110,7 +110,11 @@ public class PlayerRanged : MonoBehaviour
         set { isShooting = value; }
     }
 
-    public float ArrowDamage => arrowDamage;
+    public float ArrowDamage
+    {
+        get { return arrowDamage; }
+        set { arrowDamage = value; }
+    }
 
     public ArrowType SelectedArrow => selectedArrow;
 

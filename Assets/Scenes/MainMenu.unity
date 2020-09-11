@@ -1239,9 +1239,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveData:
-    damage: 20
-    maxHealth: 100
-    rangedDamage: 8
+    damageLevel: 1
+    maxHealthLevel: 1
+    rangedDamageLevel: 1
     levelsUnlocked: 1
     arrowAmount: 102700000a00000002000000
 --- !u!1 &125762950
@@ -3688,6 +3688,7 @@ GameObject:
   - component: {fileID: 523704951}
   - component: {fileID: 523704950}
   - component: {fileID: 523704949}
+  - component: {fileID: 523704952}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -3796,6 +3797,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523704947}
   m_CullTransparentMesh: 0
+--- !u!114 &523704952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523704947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01144d68f8638ee4ca17cfb1684d427e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  upgradeData: {fileID: 11400000, guid: 31134a5ce7fb2074ab02abdcf985391b, type: 2}
 --- !u!1 &534392456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3954,6 +3969,7 @@ GameObject:
   - component: {fileID: 543330666}
   - component: {fileID: 543330665}
   - component: {fileID: 543330664}
+  - component: {fileID: 543330667}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -4062,6 +4078,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543330662}
   m_CullTransparentMesh: 0
+--- !u!114 &543330667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543330662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01144d68f8638ee4ca17cfb1684d427e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeType: 1
+  upgradeData: {fileID: 11400000, guid: 07647f51cab5972469d18987638568a9, type: 2}
 --- !u!1 &605214008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5270,6 +5300,7 @@ GameObject:
   - component: {fileID: 1008316838}
   - component: {fileID: 1008316837}
   - component: {fileID: 1008316836}
+  - component: {fileID: 1008316839}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -5378,6 +5409,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008316834}
   m_CullTransparentMesh: 0
+--- !u!114 &1008316839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008316834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01144d68f8638ee4ca17cfb1684d427e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeType: 2
+  upgradeData: {fileID: 11400000, guid: ba41edb1dbf897b46b3d174c189e319e, type: 2}
 --- !u!1 &1022263725
 GameObject:
   m_ObjectHideFlags: 0
