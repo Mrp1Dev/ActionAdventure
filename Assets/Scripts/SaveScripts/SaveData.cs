@@ -6,10 +6,10 @@ using UnityEngine;
 [Serializable]
 public class SaveData 
 {
-    private Dictionary<UpgradeType, int> statLevels = new Dictionary<UpgradeType, int>();
+    [NonSerialized] private Dictionary<UpgradeType, int> statLevels = new Dictionary<UpgradeType, int>();
 
-    [SerializeField] private List<UpgradeType> upgradeTypes;
-    [SerializeField] private List<int> levelValues;
+    [SerializeField] private List<UpgradeType> upgradeTypes = new List<UpgradeType>();
+    [SerializeField] private List<int> levelValues= new List<int>();
 
     [SerializeField] private int levelsUnlocked = 1;
     [SerializeField] private int[] arrowAmount = new int[] { 10000, 10, 2 };
@@ -67,7 +67,9 @@ public class SaveData
     {
         for (int i = 0; i < levelValues.Count; i++)
         {
-            statLevels.Add(upgradeTypes[i], levelValues[i]);
+            if (!statLevels.ContainsKey(upgradeTypes[i]))
+                statLevels.Add(upgradeTypes[i], levelValues[i]);
+            statLevels[upgradeTypes[i]] = levelValues[i];
         }
     }
 }

@@ -13,7 +13,7 @@ public class PlayerDataLoader : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        save = SaveManager.instance.SaveData;
+        save = SaveManager.SaveData;
         foreach(var data in upgradeSO)
         {
             switch (data.UpgradeType)

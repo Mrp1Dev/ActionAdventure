@@ -4,42 +4,37 @@ using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public static class SaveManager
 {
-    public static SaveManager instance;
-    [HideInInspector] public SaveData SaveData = new SaveData();
+    [HideInInspector] public static SaveData SaveData = new SaveData();
 
-    void Awake()
-    {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+    [RuntimeInitializeOnLoadMethod]
+    static void Awake()
+    { 
         Load();
         SaveData.DataUpdated += Save;
     }
 
-    void OnDestroy()
-    {
-        instance = null;
-    }
 
-    public void Save()
+    public static void Save()
     {
-        SaveStreamer.SaveGame(SaveData);
         Debug.Log("Saved!");
+        SaveData.SerializeFields();
+        SaveStreamer.SaveGame(SaveData);
     }
 
-    public void Load()
+    public static void Load()
     {
         SaveData data = SaveStreamer.LoadGame();
         if (data != null)
         {
             SaveData = data;
-
+            SaveData.DeserializeFields();
         }
 
     }
 
-    public void Delete()
+    public static void Delete()
     {
         SaveStreamer.DeleteSaves();
         SaveData = new SaveData();

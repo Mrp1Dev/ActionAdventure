@@ -14,7 +14,7 @@ public class UpgradeButton : MonoBehaviour
 
     void OnClick()
     {
-        SaveData save = SaveManager.instance.SaveData;
+        SaveData save = SaveManager.SaveData;
         UpgradeType type = upgradeSO.UpgradeType;
         if(LevelExists(type, save))
         {
