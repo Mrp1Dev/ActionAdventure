@@ -1239,9 +1239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SaveData:
-    damageLevel: 1
-    maxHealthLevel: 1
-    rangedDamageLevel: 1
+    upgradeTypes: 
+    levelValues: 
     levelsUnlocked: 1
     arrowAmount: 102700000a00000002000000
 --- !u!1 &125762950
@@ -3809,8 +3808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01144d68f8638ee4ca17cfb1684d427e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: 0
-  upgradeData: {fileID: 11400000, guid: 31134a5ce7fb2074ab02abdcf985391b, type: 2}
+  upgradeSO: {fileID: 11400000, guid: 31134a5ce7fb2074ab02abdcf985391b, type: 2}
 --- !u!1 &534392456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,8 +4088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01144d68f8638ee4ca17cfb1684d427e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: 1
-  upgradeData: {fileID: 11400000, guid: 07647f51cab5972469d18987638568a9, type: 2}
+  upgradeSO: {fileID: 11400000, guid: 07647f51cab5972469d18987638568a9, type: 2}
 --- !u!1 &605214008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5421,8 +5418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01144d68f8638ee4ca17cfb1684d427e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeType: 2
-  upgradeData: {fileID: 11400000, guid: ba41edb1dbf897b46b3d174c189e319e, type: 2}
+  upgradeSO: {fileID: 11400000, guid: ba41edb1dbf897b46b3d174c189e319e, type: 2}
 --- !u!1 &1022263725
 GameObject:
   m_ObjectHideFlags: 0

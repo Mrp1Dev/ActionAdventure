@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public enum UpgradeType { Damage, Health, RangedDamage };
 public class UpgradeButton : MonoBehaviour
 {
-    [SerializeField] private UpgradeType upgradeType;
-    [SerializeField] private UpgradeDataScriptableObject upgradeData;
+    [SerializeField] private UpgradeDataScriptableObject upgradeSO;
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(OnClick);
@@ -15,22 +14,21 @@ public class UpgradeButton : MonoBehaviour
 
     void OnClick()
     {
-        if(upgradeData.DataList.Count > SaveManager.instance.SaveData.DamageLevel)
+        SaveData save = SaveManager.instance.SaveData;
+        UpgradeType type = upgradeSO.UpgradeType;
+        if(LevelExists(type, save))
         {
-            switch (upgradeType)
-            {
-                case UpgradeType.Damage:
-                    SaveManager.instance.SaveData.DamageLevel++;
-                    break;
-                case UpgradeType.Health:
-                    SaveManager.instance.SaveData.MaxHealthLevel++;
-                    break;
-                case UpgradeType.RangedDamage:
-                    SaveManager.instance.SaveData.RangedDamageLevel++;
-                    break;
-            }
+            save.IncrementStatLevel(type, 1);
         }
+    }
 
-
+    bool LevelExists(UpgradeType type, SaveData save)
+    {
+        int levelLength = upgradeSO.DataList.Count;
+        if(save.GetStatLevel(type) + 1 < levelLength)
+        {
+            return true;
+        }
+        return false;
     }
 }

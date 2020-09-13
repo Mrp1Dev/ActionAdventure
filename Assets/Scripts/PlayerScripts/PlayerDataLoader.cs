@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class PlayerDataLoader : MonoBehaviour
 {
-    [SerializeField] private UpgradeDataScriptableObject damageUpgrades;
-    [SerializeField] private UpgradeDataScriptableObject maxHealthUpgrades;
-    [SerializeField] private UpgradeDataScriptableObject rangedUpgrades;
+    [SerializeField] private UpgradeDataScriptableObject[] upgradeSO;
 
     [SerializeField] private PlayerCombat playerCombat;
     [SerializeField] private PlayerRanged playerRanged;
 
-    private SaveManager save;
+    private SaveData save;
     // Start is called before the first frame update
     void Awake()
     {
-        save = SaveManager.instance;
-
-        playerCombat.damage =
-            damageUpgrades.DataList[save.SaveData.DamageLevel].value;
-
-        playerCombat.DefaultHealth =
-            maxHealthUpgrades.DataList[save.SaveData.MaxHealthLevel].value;
-
-        playerRanged.ArrowDamage =
-            rangedUpgrades.DataList[save.SaveData.RangedDamageLevel].value;
+        save = SaveManager.instance.SaveData;
+        foreach(var data in upgradeSO)
+        {
+            switch (data.UpgradeType)
+            {
+                case UpgradeType.Damage:
+                    playerCombat.damage = data.DataList[save.GetStatLevel(data.UpgradeType)].value;
+                    break;
+                case UpgradeType.Health:
+                    playerCombat.DefaultHealth = data.DataList[save.GetStatLevel(data.UpgradeType)].value;
+                    break;
+                case UpgradeType.RangedDamage:
+                    playerRanged.ArrowDamage = data.DataList[save.GetStatLevel(data.UpgradeType)].value;
+                    break;
+            }
+        }
     }
 
 }

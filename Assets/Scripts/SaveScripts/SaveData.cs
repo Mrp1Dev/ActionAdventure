@@ -6,41 +6,16 @@ using UnityEngine;
 [Serializable]
 public class SaveData 
 {
-    [SerializeField] private int damageLevel = 1;
-    [SerializeField] private int maxHealthLevel = 1;
-    [SerializeField] private int rangedDamageLevel = 1;
+    private Dictionary<UpgradeType, int> statLevels = new Dictionary<UpgradeType, int>();
+
+    [SerializeField] private List<UpgradeType> upgradeTypes;
+    [SerializeField] private List<int> levelValues;
+
     [SerializeField] private int levelsUnlocked = 1;
     [SerializeField] private int[] arrowAmount = new int[] { 10000, 10, 2 };
 
     public event Action DataUpdated;
 
-    public int DamageLevel
-    {
-        get { return damageLevel; }
-        set
-        {
-            damageLevel = value;
-            DataUpdated?.Invoke();
-        }
-    }
-    public int MaxHealthLevel
-    {
-        get { return maxHealthLevel; }
-        set
-        {
-            maxHealthLevel = value;
-            DataUpdated?.Invoke();
-        }
-    }
-    public int RangedDamageLevel
-    {
-        get { return rangedDamageLevel; }
-        set
-        {
-            rangedDamageLevel = value;
-            DataUpdated?.Invoke();
-        }
-    }
     public int LevelsUnlocked
     {
         get { return levelsUnlocked; }
@@ -62,5 +37,37 @@ public class SaveData
         DataUpdated?.Invoke();
     }
 
+    public void IncrementStatLevel(UpgradeType type, int increment)
+    {
+        if (!statLevels.ContainsKey(type)) { statLevels.Add(type, 0); }
+        statLevels[type] += increment;
+        DataUpdated?.Invoke();
+    }
 
+    public int GetStatLevel(UpgradeType type)
+    {
+        if (!statLevels.ContainsKey(type)) { statLevels.Add(type, 0); }
+        return statLevels[type];
+    }
+
+    public void SerializeFields()
+    {
+        foreach (UpgradeType type in statLevels.Keys)
+        {
+            upgradeTypes.Add(type);
+        }
+
+        foreach (int level in statLevels.Values)
+        {
+            levelValues.Add(level);
+        }
+    }
+
+    public void DeserializeFields()
+    {
+        for (int i = 0; i < levelValues.Count; i++)
+        {
+            statLevels.Add(upgradeTypes[i], levelValues[i]);
+        }
+    }
 }

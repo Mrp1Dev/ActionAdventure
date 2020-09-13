@@ -25,6 +25,7 @@ public class SaveManager : MonoBehaviour
     public void Save()
     {
         SaveStreamer.SaveGame(SaveData);
+        Debug.Log("Saved!");
     }
 
     public void Load()
@@ -42,5 +43,6 @@ public class SaveManager : MonoBehaviour
     {
         SaveStreamer.DeleteSaves();
         SaveData = new SaveData();
+        SaveData.DataUpdated += Save;
     }
 }

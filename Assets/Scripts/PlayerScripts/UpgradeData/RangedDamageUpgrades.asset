@@ -23,3 +23,4 @@ MonoBehaviour:
     cost: 2500
   - value: 90
     cost: 5250
+  upgradeType: 2

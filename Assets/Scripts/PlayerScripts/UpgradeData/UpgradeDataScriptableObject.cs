@@ -13,6 +13,8 @@ public struct UpgradeData
 [CreateAssetMenu(fileName = "UpgradeData", menuName = "ScriptableObjects/UpgradeDataScriptableObject")]
 public class UpgradeDataScriptableObject : ScriptableObject
 {
-    [SerializeField] UpgradeData[] data;
+    [SerializeField] private UpgradeData[] data;
+    [SerializeField] private UpgradeType upgradeType;
     public IReadOnlyList<UpgradeData> DataList => data;
+    public UpgradeType UpgradeType => upgradeType;
 }

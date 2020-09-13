@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight=true;
     public bool isGrounded = false;
     public bool canMove = true;
-    private bool pressedJump=false;
+    private bool pressedJump;
 
     [SerializeField] private LayerMask platform;
     [SerializeField] private Transform groundHitPos;
