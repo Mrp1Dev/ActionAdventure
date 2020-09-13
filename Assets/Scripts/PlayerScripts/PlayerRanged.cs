@@ -22,7 +22,7 @@ public class PlayerRanged : MonoBehaviour
     private PlayerMovement playerMovement;
     private Animator animator;
 
-    private bool isShooting=false;
+    private bool isShooting = false;
     private bool canShoot = true;
     [SerializeField] float defaultShootTimer;
     private float shootTimer;
@@ -57,11 +57,13 @@ public class PlayerRanged : MonoBehaviour
         {
             selectedArrow = ArrowType.Normal;
             Debug.Log(selectedArrow);
-        }else if (Input.GetKeyDown(KeyCode.Alpha2))
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             selectedArrow = ArrowType.Poison;
             Debug.Log(selectedArrow);
-        }else if (Input.GetKeyDown(KeyCode.Alpha3))
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             selectedArrow = ArrowType.Bomb;
             Debug.Log(selectedArrow);
@@ -92,10 +94,10 @@ public class PlayerRanged : MonoBehaviour
 
     private void startShooting()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);         
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);
         isShooting = true;
         playerMovement.canMove = false;
-        
+
     }
 
     public void spawnBullet(ArrowType arrowType)
@@ -118,5 +120,10 @@ public class PlayerRanged : MonoBehaviour
 
     public ArrowType SelectedArrow => selectedArrow;
 
-    public int[] ArrowAmount => arrowAmount;
+    public int[] ArrowAmount
+    {
+        get { return arrowAmount; }
+        set { arrowAmount = value; }
+    }
+
 }

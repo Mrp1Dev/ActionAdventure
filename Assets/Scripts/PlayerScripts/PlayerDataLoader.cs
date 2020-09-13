@@ -29,6 +29,10 @@ public class PlayerDataLoader : MonoBehaviour
                     break;
             }
         }
+
+        playerRanged.ArrowAmount = save.ArrowAmount;
     }
+
+  
 
 }

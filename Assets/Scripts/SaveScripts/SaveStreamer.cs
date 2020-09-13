@@ -2,7 +2,7 @@
 using System.IO;
 using UnityEngine;
 
-public class SaveStreamer : MonoBehaviour
+public static class SaveStreamer
 {
     public static void SaveGame(SaveData data)
     {

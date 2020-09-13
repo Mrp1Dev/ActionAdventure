@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class SaveData 
+public class SaveData
 {
     [NonSerialized] private Dictionary<UpgradeType, int> statLevels = new Dictionary<UpgradeType, int>();
 
     [SerializeField] private List<UpgradeType> upgradeTypes = new List<UpgradeType>();
-    [SerializeField] private List<int> levelValues= new List<int>();
+    [SerializeField] private List<int> levelValues = new List<int>();
 
     [SerializeField] private int levelsUnlocked = 1;
     [SerializeField] private int[] arrowAmount = new int[] { 10000, 10, 2 };

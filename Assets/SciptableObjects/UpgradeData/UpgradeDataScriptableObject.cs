@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public struct UpgradeData
 {
-    public int value;
+    public float value;
     public int cost;
 }
 
@@ -15,6 +15,7 @@ public class UpgradeDataScriptableObject : ScriptableObject
 {
     [SerializeField] private UpgradeData[] data;
     [SerializeField] private UpgradeType upgradeType;
+
     public IReadOnlyList<UpgradeData> DataList => data;
     public UpgradeType UpgradeType => upgradeType;
 }

@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 3750342}
   - component: {fileID: 3750344}
   - component: {fileID: 3750343}
+  - component: {fileID: 3750345}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -406,6 +407,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3750341}
   m_CullTransparentMesh: 0
+--- !u!114 &3750345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b808a4b61374704ab7cf00dcaed6ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1191437410}
+  upgradeSO: {fileID: 11400000, guid: 07647f51cab5972469d18987638568a9, type: 2}
 --- !u!1 &13401110
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 35457220}
+  - component: {fileID: 35457221}
   m_Layer: 5
   m_Name: PoisonArrows
   m_TagString: Untagged
@@ -787,6 +803,20 @@ RectTransform:
   m_AnchoredPosition: {x: -310.4, y: 103.40219}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &35457221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35457219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea839f8215b1dc54f90080e844fe6844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2118644304}
+  type: 1
 --- !u!1 &64394751
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +828,7 @@ GameObject:
   - component: {fileID: 64394752}
   - component: {fileID: 64394754}
   - component: {fileID: 64394753}
+  - component: {fileID: 64394755}
   m_Layer: 5
   m_Name: Ranged
   m_TagString: Untagged
@@ -923,6 +954,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64394751}
   m_CullTransparentMesh: 0
+--- !u!114 &64394755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64394751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b808a4b61374704ab7cf00dcaed6ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1661951793}
+  upgradeSO: {fileID: 11400000, guid: ba41edb1dbf897b46b3d174c189e319e, type: 2}
 --- !u!1 &87583588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hermit''s Death
+  m_text: 'Wizard''s Death
 
 '
   m_isRightToLeft: 0
@@ -2521,7 +2566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowType: 2
-  cost: 0
+  cost: 400
+  costText: {fileID: 87583590}
   increment: 3
 --- !u!1 &394850134
 GameObject:
@@ -2828,7 +2874,7 @@ GameObject:
   - component: {fileID: 449639358}
   - component: {fileID: 449639357}
   m_Layer: 5
-  m_Name: PoisonArrowImg
+  m_Name: BombArrowImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3761,6 +3807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeSO: {fileID: 11400000, guid: 31134a5ce7fb2074ab02abdcf985391b, type: 2}
+  costText: {fileID: 1095115225}
 --- !u!1 &534392456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,6 +4088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeSO: {fileID: 11400000, guid: 07647f51cab5972469d18987638568a9, type: 2}
+  costText: {fileID: 2013634631}
 --- !u!1 &605214008
 GameObject:
   m_ObjectHideFlags: 0
@@ -5371,6 +5419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeSO: {fileID: 11400000, guid: ba41edb1dbf897b46b3d174c189e319e, type: 2}
+  costText: {fileID: 1603497489}
 --- !u!1 &1022263725
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,6 +5642,7 @@ GameObject:
   - component: {fileID: 1057752231}
   - component: {fileID: 1057752233}
   - component: {fileID: 1057752232}
+  - component: {fileID: 1057752234}
   m_Layer: 5
   m_Name: Melee
   m_TagString: Untagged
@@ -5718,6 +5768,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057752230}
   m_CullTransparentMesh: 0
+--- !u!114 &1057752234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057752230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b808a4b61374704ab7cf00dcaed6ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 23862597}
+  upgradeSO: {fileID: 11400000, guid: 31134a5ce7fb2074ab02abdcf985391b, type: 2}
 --- !u!1 &1095115223
 GameObject:
   m_ObjectHideFlags: 0
@@ -8391,7 +8455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowType: 1
-  cost: 0
+  cost: 400
+  costText: {fileID: 252132435}
   increment: 5
 --- !u!1 &1661951791
 GameObject:
@@ -9367,6 +9432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1965492021}
+  - component: {fileID: 1965492022}
   m_Layer: 5
   m_Name: BombArrows
   m_TagString: Untagged
@@ -9396,6 +9462,20 @@ RectTransform:
   m_AnchoredPosition: {x: -25.9, y: 103.40219}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1965492022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965492020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea839f8215b1dc54f90080e844fe6844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 637887619}
+  type: 2
 --- !u!1 &1967576513
 GameObject:
   m_ObjectHideFlags: 0
