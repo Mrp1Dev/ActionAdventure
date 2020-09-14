@@ -10,7 +10,7 @@ public class SaveData
 
     [SerializeField] private List<UpgradeType> upgradeTypes = new List<UpgradeType>();
     [SerializeField] private List<int> levelValues = new List<int>();
-
+    [SerializeField] private int gold = 0;
     [SerializeField] private int levelsUnlocked = 1;
     [SerializeField] private int[] arrowAmount = new int[] { 10000, 10, 2 };
 
@@ -29,6 +29,16 @@ public class SaveData
     public int[] ArrowAmount
     {
         get { return arrowAmount; }
+    }
+
+    public int Gold
+    {
+        get { return gold; }
+        set
+        {
+            gold = value;
+            DataUpdated?.Invoke();
+        }
     }
 
     public void SetArrowAmount(int index, int increment)

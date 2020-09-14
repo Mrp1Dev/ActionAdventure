@@ -145,7 +145,7 @@ public class PlayerCombat : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             
             GetComponent<PlayerMovement>().enabled = false;
-            Camera.current.transform.GetComponentInParent<CameraFollow>().enabled = false;
+            FindObjectOfType<CameraFollow>().enabled = false;
             Vector2 knockbackVector = new Vector2(2500 * (transform.localScale.x * -1f), 0f);
             rb.AddForce(knockbackVector);
             yield return new WaitForSeconds(1f);

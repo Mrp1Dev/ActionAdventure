@@ -42,8 +42,9 @@ public class UpgradeButton : MonoBehaviour
     {
         if (!IsMaxed())
         {
-            button.interactable = true;
-            costText.text = $"{upgradeSO.DataList[SaveManager.SaveData.GetStatLevel(upgradeSO.UpgradeType) + 1].cost}G";
+            int cost = upgradeSO.DataList[SaveManager.SaveData.GetStatLevel(upgradeSO.UpgradeType) + 1].cost;
+            button.interactable = SaveManager.SaveData.Gold >= cost;
+            costText.text = $"{cost}G";
         }
         else
         {
