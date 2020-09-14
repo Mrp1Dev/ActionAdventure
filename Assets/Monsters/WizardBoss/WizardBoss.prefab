@@ -126,6 +126,7 @@ MonoBehaviour:
     m_Bits: 1024
   timeBetweenAttacks: 1
   dead: 0
+  goldToIncrement: 10000
   attackPos: {fileID: 5448027398780540903}
   attackRange: 4.49
   attackDistance: 5

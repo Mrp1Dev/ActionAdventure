@@ -7,6 +7,9 @@ public class EnemyCombat : MonoBehaviour
 {
     public float damage;
     public float health;
+    [SerializeField] private bool isSuper;
+    [SerializeField] private int superMultiplier = 3;
+    [SerializeField] private SpriteRenderer sprite;
     public float StartHealth { get; set; }
     private Animator animator;
     private Rigidbody2D rb;
@@ -25,6 +28,7 @@ public class EnemyCombat : MonoBehaviour
 
     private bool takingHit=false;
     public bool dead = false;
+    [SerializeField] private int goldToIncrement=0;
 
     public Transform attackPos;
     public float attackRange;
@@ -35,6 +39,7 @@ public class EnemyCombat : MonoBehaviour
     private void Awake()
     {
         bloodParticle = GetComponentInChildren<ParticleSystem>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         
     }
     // Start is called before the first frame update
@@ -44,7 +49,11 @@ public class EnemyCombat : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
-
+        if (isSuper)
+        {
+            sprite.color = Color.magenta;
+            goldToIncrement *= superMultiplier;
+        }
     }
 
     // Update is called once per frame
@@ -91,7 +100,7 @@ public class EnemyCombat : MonoBehaviour
             dead = true;
 
             GetComponent<EnemyAI>().enabled = false;
-
+            SaveManager.SaveData.Gold += goldToIncrement;
             animator.SetBool("Dead", dead);
             if (bossMode)
             {

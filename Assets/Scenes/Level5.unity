@@ -3634,7 +3634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3878,6 +3878,10 @@ PrefabInstance:
     - target: {fileID: 1088945933659998831, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
       propertyPath: m_Name
       value: Green_Goblin (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
@@ -60454,6 +60458,14 @@ PrefabInstance:
     - target: {fileID: 1088945933659998831, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
       propertyPath: m_Name
       value: Green_Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: superMultiplier
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}

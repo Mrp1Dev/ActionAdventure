@@ -126,8 +126,11 @@ MonoBehaviour:
     m_Bits: 1024
   timeBetweenAttacks: 2.5
   dead: 0
+  goldToIncrement: 150
   attackPos: {fileID: 5448027398780540903}
   attackRange: 1.08
+  attackDistance: 1.5
+  bossMode: 0
 --- !u!1 &3661576050005259857
 GameObject:
   m_ObjectHideFlags: 0

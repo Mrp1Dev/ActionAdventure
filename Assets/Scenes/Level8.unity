@@ -46483,6 +46483,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2468216638761459881, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1088945933659998819, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
       propertyPath: m_LocalPosition.x
       value: 505.09094
@@ -46727,6 +46731,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2468216638761459881, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1088945933659998819, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
       propertyPath: m_LocalPosition.x
       value: 442.62326
@@ -47865,7 +47873,7 @@ Transform:
   - {fileID: 454658138}
   - {fileID: 602301313}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1941639819
 PrefabInstance:
@@ -47921,6 +47929,14 @@ PrefabInstance:
     - target: {fileID: 1088945933659998831, guid: 676fe224ecbb0624084d8d3bd60585d8, type: 3}
       propertyPath: m_Name
       value: MushroomEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 676fe224ecbb0624084d8d3bd60585d8, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 676fe224ecbb0624084d8d3bd60585d8, type: 3}
+      propertyPath: superMultiplier
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 676fe224ecbb0624084d8d3bd60585d8, type: 3}

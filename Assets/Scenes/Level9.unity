@@ -124536,6 +124536,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green_Goblin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: superMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
 --- !u!1001 &804895537
@@ -124592,6 +124600,14 @@ PrefabInstance:
     - target: {fileID: 1088945933659998831, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
       propertyPath: m_Name
       value: Green_Goblin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: superMultiplier
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
@@ -124701,7 +124717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -124829,6 +124845,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2468216638761459881, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2468216638761459881, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
+      propertyPath: superMultiplier
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1088945933659998819, guid: faaa48c4167c3b446aa557cc426e0316, type: 3}
       propertyPath: m_LocalPosition.x
       value: 963.86865
@@ -125117,6 +125141,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green_Goblin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: superMultiplier
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
 --- !u!1001 &1444555536
@@ -125401,6 +125433,14 @@ PrefabInstance:
     - target: {fileID: 1088945933659998831, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
       propertyPath: m_Name
       value: Green_Goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: superMultiplier
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
@@ -130648,6 +130688,14 @@ PrefabInstance:
     - target: {fileID: 1088945933659998831, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
       propertyPath: m_Name
       value: Green_Goblin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: isSuper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201646126882480810, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
+      propertyPath: superMultiplier
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874fae581a469c04abd90f1010698b3c, type: 3}
