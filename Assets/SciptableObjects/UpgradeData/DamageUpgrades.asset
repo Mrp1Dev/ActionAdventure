@@ -16,10 +16,11 @@ MonoBehaviour:
   - value: 20
     cost: 0
   - value: 40
-    cost: 200
-  - value: 60
     cost: 800
+  - value: 60
+    cost: 1600
   - value: 90
-    cost: 2000
+    cost: 2400
   - value: 150
     cost: 5000
+  upgradeType: 0

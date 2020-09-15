@@ -10,39 +10,27 @@ public class UpgradeButton : MonoBehaviour
     [SerializeField] private UpgradeDataScriptableObject upgradeSO;
     [SerializeField] private TMP_Text costText;
     private Button button;
+    private int cost;
 
     private void Awake()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
-
+        cost = upgradeSO.DataList[SaveManager.SaveData.GetStatLevel(upgradeSO.UpgradeType) + 1].cost;
     }
 
     void OnClick()
     {
         SaveData save = SaveManager.SaveData;
         UpgradeType type = upgradeSO.UpgradeType;
-        if (LevelExists(type, save))
-        {
-            save.IncrementStatLevel(type, 1);
-        }
-    }
-
-    bool LevelExists(UpgradeType type, SaveData save)
-    {
-        int levelLength = upgradeSO.DataList.Count;
-        if (save.GetStatLevel(type) + 1 < levelLength)
-        {
-            return true;
-        }
-        return false;
+        save.IncrementStatLevel(type, 1);
+        save.Gold -= cost;
     }
 
     private void Update()
     {
         if (!IsMaxed())
-        {
-            int cost = upgradeSO.DataList[SaveManager.SaveData.GetStatLevel(upgradeSO.UpgradeType) + 1].cost;
+        {            
             button.interactable = SaveManager.SaveData.Gold >= cost;
             costText.text = $"{cost}G";
         }

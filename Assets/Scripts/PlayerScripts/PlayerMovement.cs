@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight=true;
     public bool isGrounded = false;
     public bool canMove = true;
-    private bool pressedJump;
 
     [SerializeField] private LayerMask platform;
     [SerializeField] private Transform groundHitPos;
@@ -85,21 +84,11 @@ public class PlayerMovement : MonoBehaviour
         sprite_Animator.SetBool("IsGrounded", isGrounded);
     }
 
-    IEnumerator PressedJump()
-    {
-        pressedJump = true;
-        yield return new WaitForSecondsRealtime(0.15f);
-        if (!isGrounded)
-        {
-            pressedJump = false;
-        }
-    }
     void Jump()
     {
         rigidbody2D.AddForce(Vector2.up * jumpForce);
         GetComponent<PlayerCombat>().AttackEnded();
         GetComponent<PlayerCombat>().TakingHit = false;
-        pressedJump = false;
 
     }
 
@@ -114,7 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (startHeight - endHeight > fallDamageHeight)
         {
-            GetComponent<PlayerCombat>().takeDamage(((startHeight - endHeight) - fallDamageHeight) * fallDamagePerMetre);
+            GetComponent<PlayerCombat>()
+                .takeDamage(((startHeight - endHeight) - fallDamageHeight) * fallDamagePerMetre);
         }
     }
 
