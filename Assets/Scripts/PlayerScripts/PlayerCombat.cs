@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
@@ -20,8 +21,10 @@ public class PlayerCombat : MonoBehaviour
     private Transform attackPos;
     public LayerMask enemyLayer;
 
-
-    [SerializeField]private float defaultHealth;
+    [SerializeField] private AudioSource slashAudio;
+    [SerializeField] private AudioSource bloodAudio;
+ 
+    [SerializeField] private float defaultHealth;
     private float health;
     private bool takingHit=false;
 
@@ -51,7 +54,6 @@ public class PlayerCombat : MonoBehaviour
 
         attackPos = transform.GetChild(1);
         checkMovement();
-
     }
 
     void tryAttackSequence()
@@ -60,6 +62,7 @@ public class PlayerCombat : MonoBehaviour
         if (attackNumber == 0)
         {
             attackNumber = 1;
+            slashAudio.Play();
             updateAnimtor();
         }
         else if (attackNumber == 1)
@@ -69,6 +72,7 @@ public class PlayerCombat : MonoBehaviour
             if (animStateInfo.IsName("Attack-1") && animStateInfo.normalizedTime > 0.6f)
             {
                 attackNumber = 2;
+                slashAudio.PlayDelayed(0.05f);
                 updateAnimtor();
             }
         }
@@ -78,6 +82,7 @@ public class PlayerCombat : MonoBehaviour
             if (animStateInfo.IsName("Attack-2") && animStateInfo.normalizedTime > 0.6f)
             {
                 attackNumber = 3;
+                slashAudio.PlayDelayed(0.05f);
                 updateAnimtor();
             }
         }
@@ -97,6 +102,7 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<EnemyCombat>().takeDamage(damage);
+            bloodAudio.Play();
             if (doKnockback)
             {
                 enemies[i].GetComponent<EnemyCombat>().StartCoroutine("knockback");
@@ -116,7 +122,6 @@ public class PlayerCombat : MonoBehaviour
         if (attackNumber > 0)
         {
             playerMovement.canMove = false;
-
         }
         else
         {
@@ -165,8 +170,6 @@ public class PlayerCombat : MonoBehaviour
         get { return takingHit; }
         set { takingHit = value; }
     }
-
-
 
     public float DefaultHealth
     {

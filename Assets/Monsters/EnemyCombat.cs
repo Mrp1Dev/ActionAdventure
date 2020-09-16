@@ -100,7 +100,7 @@ public class EnemyCombat : MonoBehaviour
             dead = true;
 
             GetComponent<EnemyAI>().enabled = false;
-            SaveManager.SaveData.Gold += goldToIncrement;
+
             animator.SetBool("Dead", dead);
             if (bossMode)
             {
@@ -157,6 +157,7 @@ public class EnemyCombat : MonoBehaviour
 
     void die()
     {
+        SaveManager.SaveData.Gold += goldToIncrement;
         GameObject.Destroy(this.gameObject);
     }
 
