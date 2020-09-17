@@ -22,7 +22,6 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayer;
 
     [SerializeField] private AudioSource slashAudio;
-    [SerializeField] private AudioSource bloodAudio;
  
     [SerializeField] private float defaultHealth;
     private float health;
@@ -102,7 +101,6 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<EnemyCombat>().takeDamage(damage);
-            bloodAudio.Play();
             if (doKnockback)
             {
                 enemies[i].GetComponent<EnemyCombat>().StartCoroutine("knockback");

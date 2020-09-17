@@ -6,6 +6,8 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance;
     [SerializeField] List<GameObject> menuGroups;
+    [SerializeField] AudioSource buttonAudio;
+    [SerializeField] AudioSource buyClickAudio;
 
     private void Awake()
     {
@@ -27,5 +29,15 @@ public class MenuManager : MonoBehaviour
                 menuGroup.SetActive(false);
             }
         }
+    }
+
+    public void ButtonClickSound()
+    {
+        buttonAudio.Play();
+    }
+
+    public void BuyClickSound()
+    {
+        buyClickAudio.Play();
     }
 }

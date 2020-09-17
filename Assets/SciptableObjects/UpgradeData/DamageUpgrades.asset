@@ -15,12 +15,12 @@ MonoBehaviour:
   data:
   - value: 20
     cost: 0
-  - value: 40
+  - value: 45
     cost: 800
-  - value: 60
+  - value: 70
     cost: 1600
-  - value: 90
+  - value: 95
     cost: 2400
-  - value: 150
+  - value: 160
     cost: 5000
   upgradeType: 0

@@ -15,5 +15,6 @@ public class ChangeMenuPanel : MonoBehaviour
     public void OnClick()
     {
         MenuManager.instance.ShowGroup(toShow);
+        MenuManager.instance.ButtonClickSound();
     }
 }

@@ -22,6 +22,7 @@ public class ArrowBuyButton : MonoBehaviour
     {
         SaveManager.SaveData.SetArrowAmount((int)arrowType, increment);
         SaveManager.SaveData.Gold -= cost;
+        MenuManager.instance.BuyClickSound();
         Debug.Log($"{SaveManager.SaveData.ArrowAmount[(int)arrowType]} {arrowType}");
     }
 

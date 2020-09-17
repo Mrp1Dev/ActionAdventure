@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
+﻿
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public int jumpForce= 750;
     public float fallDamageHeight;
     public float fallDamagePerMetre;
+    [SerializeField] private AudioSource jumpAudio;
 
     private Rigidbody2D rigidbody2D;  
     private Animator sprite_Animator;
@@ -86,10 +84,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
+
         rigidbody2D.AddForce(Vector2.up * jumpForce);
         GetComponent<PlayerCombat>().AttackEnded();
+        AudioSource[] otherAudio = GetComponents<AudioSource>();
+        foreach(var other in otherAudio) { other.Stop(); }
+        jumpAudio.Play();
         GetComponent<PlayerCombat>().TakingHit = false;
-
     }
 
     float startHeight=0f;

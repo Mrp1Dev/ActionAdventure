@@ -9,7 +9,7 @@ public class EnemyCombat : MonoBehaviour
     public float health;
     [SerializeField] private bool isSuper;
     [SerializeField] private int superMultiplier = 3;
-    [SerializeField] private SpriteRenderer sprite;
+    private SpriteRenderer sprite;
     public float StartHealth { get; set; }
     private Animator animator;
     private Rigidbody2D rb;
@@ -17,6 +17,7 @@ public class EnemyCombat : MonoBehaviour
     public float knockbackPower;
     private GameObject player;
     ParticleSystem bloodParticle;
+    [SerializeField] private AudioSource bloodEffect;
 
     private float dist;
     private bool isAttacking = false;
@@ -29,7 +30,6 @@ public class EnemyCombat : MonoBehaviour
     private bool takingHit=false;
     public bool dead = false;
     [SerializeField] private int goldToIncrement=0;
-
     public Transform attackPos;
     public float attackRange;
     [SerializeField] float attackDistance=1.5f;
@@ -86,6 +86,7 @@ public class EnemyCombat : MonoBehaviour
         if (!isPoison)
         {
             animator.SetTrigger("TakeHit");
+            bloodEffect.PlayDelayed(0.05f);
             takingHit = true;
             canAttack = true;
         }

@@ -1,7 +1,4 @@
 ﻿using EZCameraShake;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
@@ -14,6 +11,7 @@ public class ArrowScript : MonoBehaviour
     [SerializeField] Vector3 tipOffset;
     [SerializeField] float bombDamage;
     [SerializeField] private GameObject particlePrefab;
+    [SerializeField] private AudioSource arrowHitSound;
 
     [SerializeField] LayerMask enemyLayer;
 
@@ -50,6 +48,7 @@ public class ArrowScript : MonoBehaviour
         {
             float damage = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRanged>().ArrowDamage;
             EnemyCombat enemyCombat = collision.gameObject.GetComponent<EnemyCombat>();
+            arrowHitSound.PlayDelayed(0.05f);
             enemyCombat.takeDamage(damage);
 
             switch (arrowType)
@@ -79,7 +78,7 @@ public class ArrowScript : MonoBehaviour
                     }
                     break;
             }
-            GameObject.Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

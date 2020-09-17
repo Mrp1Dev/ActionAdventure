@@ -13,10 +13,9 @@ public enum ArrowType
 
 public class PlayerRanged : MonoBehaviour
 {
-
-
     private ArrowType selectedArrow;
     [SerializeField] private int[] arrowAmount;
+    [SerializeField] private AudioSource bowDrawAudio;
 
     private PlayerCombat playerCombat;
     private PlayerMovement playerMovement;
@@ -45,13 +44,13 @@ public class PlayerRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        arrowSelectCheck();
+        ArrowSelectCheck();
         shootCheck();
 
         animator.SetBool("Shooting", isShooting);
     }
 
-    private void arrowSelectCheck()
+    private void ArrowSelectCheck()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -95,6 +94,7 @@ public class PlayerRanged : MonoBehaviour
     private void startShooting()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);
+        bowDrawAudio.Play();
         isShooting = true;
         playerMovement.canMove = false;
 

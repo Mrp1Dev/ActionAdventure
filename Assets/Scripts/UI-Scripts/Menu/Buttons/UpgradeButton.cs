@@ -25,6 +25,7 @@ public class UpgradeButton : MonoBehaviour
         UpgradeType type = upgradeSO.UpgradeType;
         save.IncrementStatLevel(type, 1);
         save.Gold -= cost;
+        MenuManager.instance.BuyClickSound();
     }
 
     private void Update()
