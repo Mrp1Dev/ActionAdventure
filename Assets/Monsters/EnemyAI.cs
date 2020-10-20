@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     public float maxDistance;
     public float followDistance;
     private Vector2 playerPos;
-    public float yLevelDif=0.5f;
+    public float yLevelDif = 0.5f;
     private float dist;
     public Rigidbody2D rb;
     public float moveSpeed;
@@ -35,10 +35,10 @@ public class EnemyAI : MonoBehaviour
 
         if (!defaultFacingRight)
         {
-            transform.localScale = new Vector3(transform.localScale.x*-1f, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
         }
         facingRight = defaultFacingRight;
-        
+
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour
         playerPos = player.transform.position;
         dist = playerPos.x - transform.position.x;
         checkForPlayer();
-        if (hasSeenPlayer && Mathf.Abs(playerPos.y - transform.position.y) < yLevelDif && dist<followDistance)
+        if (hasSeenPlayer && Mathf.Abs(playerPos.y - transform.position.y) < yLevelDif && dist < followDistance)
         {
             followPlayer();
         }
@@ -56,23 +56,27 @@ public class EnemyAI : MonoBehaviour
             stopfollowingPlayer();
         }
 
-        checkFlip();
+        if (!enemyCombat.IsAttacking)
+        {
+            checkFlip();
+        }
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     void checkForPlayer()
     {
-               
-        if(Mathf.Abs(dist)<maxDistance && Mathf.Abs(playerPos.y - transform.position.y)<yLevelDif)
+
+        if (Mathf.Abs(dist) < maxDistance && Mathf.Abs(playerPos.y - transform.position.y) < yLevelDif)
         {
-            
-            if(!facingRight && dist < 0)
+
+            if (!facingRight && dist < 0)
             {
                 hasSeenPlayer = true;
 
-                
-            }else if(facingRight && dist > 0)
+
+            }
+            else if (facingRight && dist > 0)
             {
                 hasSeenPlayer = true;
 
@@ -82,7 +86,7 @@ public class EnemyAI : MonoBehaviour
 
     void followPlayer()
     {
-        if (Mathf.Abs(dist) > 1.5f && !enemyCombat.IsAttacking && !enemyCombat.TakingHit )
+        if (Mathf.Abs(dist) > 1.5f && !enemyCombat.IsAttacking && !enemyCombat.TakingHit)
         {
             if (dist < 0)
             {
@@ -103,7 +107,7 @@ public class EnemyAI : MonoBehaviour
     {
         rb.velocity = new Vector2(0f, rb.velocity.y);
     }
-    
+
     void checkFlip()
     {
         if ((rb.velocity.x > 0 && !facingRight) || (rb.velocity.x < 0 && facingRight))
@@ -111,7 +115,6 @@ public class EnemyAI : MonoBehaviour
             facingRight = !facingRight;
             Vector3 localscale = transform.localScale;
             transform.localScale = new Vector3(localscale.x * -1f, localscale.y, localscale.z);
-
         }
     }
 
@@ -121,7 +124,6 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Platform")
         {
-           
             endHeight = transform.position.y;
         }
 
@@ -135,7 +137,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Platform")
         {
-            
+
             startHeight = transform.position.y;
         }
     }

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 300
-  health: 4500
+  health: 8000
   isSuper: 0
   superMultiplier: 3
   deathKnockbackPower: 2500
@@ -132,7 +132,6 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   dead: 0
   goldToIncrement: 10000
-  goldAudio: {fileID: 605495955091800426}
   attackPos: {fileID: 5448027398780540903}
   attackRange: 4.49
   attackDistance: 5

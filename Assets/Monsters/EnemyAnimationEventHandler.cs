@@ -21,7 +21,6 @@ public class EnemyAnimationEventHandler : MonoBehaviour
     public void callStoppedAttacking()
     {
         enemyCombat.stoppedAttacking();
-
     }
 
     public void callNotTakingHit()
@@ -31,7 +30,7 @@ public class EnemyAnimationEventHandler : MonoBehaviour
 
     public void callDie()
     {
-        enemyCombat.callDie();
+        enemyCombat.CallDie();
     }
 
     

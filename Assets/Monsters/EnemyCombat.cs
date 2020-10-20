@@ -76,18 +76,23 @@ public class EnemyCombat : MonoBehaviour
         {
             attack();
         }
+
     }
 
     public void takeDamage(float damageGiven, bool isPoison=false)
     {
-        isAttacking = false;
+        if(!bossMode)
+            isAttacking = false;
         GetComponent<EnemyAI>().HasSeenPlayer = true;
         health -= damageGiven;
         if (!isPoison)
         {
-            animator.SetTrigger("TakeHit");
+            if (!bossMode)
+            {
+                animator.SetTrigger("TakeHit");
+                takingHit = true;
+            }
             bloodEffect.PlayDelayed(0.05f);
-            takingHit = true;
             canAttack = true;
         }
 
@@ -109,7 +114,7 @@ public class EnemyCombat : MonoBehaviour
             }
             else
             {
-                deathKnockback();
+                DeathKnockback();
             }          
             GetComponent<Collider2D>().enabled = false;
             Debug.Log("Death has seen this enemy :D");
@@ -129,13 +134,13 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    public void callDie()
+    public void CallDie()
     {
         if(!bossMode)
             Invoke("die", 1f);
     }
 
-    private void deathKnockback()
+    private void DeathKnockback()
     {
         Vector2 knockbackVector = new Vector2(deathKnockbackPower * (transform.localScale.x * -1f), 0f);
         rb.AddForce(knockbackVector);
@@ -151,8 +156,8 @@ public class EnemyCombat : MonoBehaviour
 
         GetComponent<EnemyAI>().enabled = false;
         yield return new WaitForSeconds(1f);
-        if(!dead)
-        GetComponent<EnemyAI>().enabled = true;
+        if (!dead) ;
+        //GetComponent<EnemyAI>().enabled = true;
     }
     
 
@@ -172,23 +177,29 @@ public class EnemyCombat : MonoBehaviour
         if(bossMode && health<(0.5*StartHealth))
         {
             animator.SetTrigger("Attack2");
-            Debug.Log("This 2");
         }
         else
         {
             animator.SetTrigger("Attack");
-            Debug.Log("This 1");
         }
 
         isAttacking = true;
         canAttack = false;
         rb.velocity = new Vector2(0f, rb.velocity.y);
+        if (bossMode)
+        {
+            GetComponent<EnemyAI>().enabled = false;
+        }
     }
 
     public void stoppedAttacking()
     {
         isAttacking = false;
-        StartCoroutine("canAttackCheck");
+        if (bossMode)
+        {
+            GetComponent<EnemyAI>().enabled = true;
+        }
+        StartCoroutine(canAttackCheck());
 
     }
 
@@ -198,7 +209,7 @@ public class EnemyCombat : MonoBehaviour
         canAttack = true;
     }
 
-    public IEnumerator poisonEnemy(int cycles, float damage, float timePerCycle)
+    public IEnumerator PoisonEnemy(int cycles, float damage, float timePerCycle)
     {
         for (int i = 0; i < cycles; i++)
         {

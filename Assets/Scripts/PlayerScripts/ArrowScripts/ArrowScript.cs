@@ -59,7 +59,7 @@ public class ArrowScript : MonoBehaviour
                 case ArrowType.Poison:
                     Debug.Log("Poisoned");
                     float poisonDamage = damage * 0.8f;
-                    enemyCombat.StartCoroutine(enemyCombat.poisonEnemy(poisonCycles, poisonDamage, 1.2f));
+                    enemyCombat.StartCoroutine(enemyCombat.PoisonEnemy(poisonCycles, poisonDamage, 1.2f));
                     break;
 
                 case ArrowType.Bomb:

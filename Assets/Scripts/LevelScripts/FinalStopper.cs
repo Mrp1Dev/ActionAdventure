@@ -25,12 +25,12 @@ public class FinalStopper : MonoBehaviour
             if(enemies.Length <= 0)
             {
                 hasCompleted = true;
-                StartCoroutine("allowPass");
+                StartCoroutine(AllowPass());
             }
         }
     }
 
-    IEnumerator allowPass()
+    IEnumerator AllowPass()
     {
         GetComponentInChildren<ParticleSystem>().Play();
         yield return new WaitForSecondsRealtime(1f);
