@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour
 
         if (!enemyCombat.IsAttacking)
         {
-            checkFlip();
+            CheckFlip();
         }
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
@@ -108,7 +108,7 @@ public class EnemyAI : MonoBehaviour
         rb.velocity = new Vector2(0f, rb.velocity.y);
     }
 
-    void checkFlip()
+    void CheckFlip()
     {
         if ((rb.velocity.x > 0 && !facingRight) || (rb.velocity.x < 0 && facingRight))
         {
@@ -129,7 +129,7 @@ public class EnemyAI : MonoBehaviour
 
         if (startHeight - endHeight > fallDamageHeight && startHeight != 0)
         {
-            GetComponent<EnemyCombat>().takeDamage(((startHeight - endHeight) - fallDamageHeight) * fallDamagePerMetre);
+            GetComponent<EnemyCombat>().TakeDamage(((startHeight - endHeight) - fallDamageHeight) * fallDamagePerMetre);
         }
     }
 

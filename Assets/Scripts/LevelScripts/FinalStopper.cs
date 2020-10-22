@@ -22,7 +22,7 @@ public class FinalStopper : MonoBehaviour
         if (Mathf.Abs(dist) < 6f && !hasCompleted)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if(enemies.Length <= 0)
+            if(enemies != null)
             {
                 hasCompleted = true;
                 StartCoroutine(AllowPass());

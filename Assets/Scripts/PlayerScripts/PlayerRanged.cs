@@ -14,7 +14,7 @@ public enum ArrowType
 public class PlayerRanged : MonoBehaviour
 {
     private ArrowType selectedArrow;
-    [SerializeField] private int[] arrowAmount;
+    private int[] arrowAmount;
     [SerializeField] private AudioSource bowDrawAudio;
 
     private PlayerCombat playerCombat;
@@ -45,7 +45,7 @@ public class PlayerRanged : MonoBehaviour
     void Update()
     {
         ArrowSelectCheck();
-        shootCheck();
+        ShootCheck();
 
         animator.SetBool("Shooting", isShooting);
     }
@@ -69,14 +69,14 @@ public class PlayerRanged : MonoBehaviour
         }
     }
 
-    private void shootCheck()
+    private void ShootCheck()
     {
         if (Input.GetMouseButtonDown(1) && shootTimer <= 0f)
         {
             if (arrowAmount[(int)selectedArrow] > 0)
             {
-                startShooting();
-                arrowAmount[(int)selectedArrow]--;
+                StartShooting();
+                SaveManager.SaveData.SetArrowAmount((int)selectedArrow, -1);
                 shootTimer = defaultShootTimer;
             }
         }
@@ -86,12 +86,12 @@ public class PlayerRanged : MonoBehaviour
         }
     }
 
-    public void increaseArrow(ArrowType arrowType, int amount)
+    public void IncreaseArrow(ArrowType arrowType, int amount)
     {
         arrowAmount[(int)arrowType] += amount;
     }
 
-    private void startShooting()
+    private void StartShooting()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);
         bowDrawAudio.Play();
@@ -100,7 +100,7 @@ public class PlayerRanged : MonoBehaviour
 
     }
 
-    public void spawnBullet(ArrowType arrowType)
+    public void SpawnBullet(ArrowType arrowType)
     {
         Transform attackPos = playerCombat.AttackPos;
         Instantiate(arrowPrefabs[(int)arrowType], attackPos.position, attackPos.rotation);
@@ -123,7 +123,11 @@ public class PlayerRanged : MonoBehaviour
     public int[] ArrowAmount
     {
         get { return arrowAmount; }
-        set { arrowAmount = value; }
+        set 
+        {
+            arrowAmount = value;
+            
+        }
     }
 
 }

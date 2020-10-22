@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 26923971437264702}
   - component: {fileID: 7080597376589659903}
-  - component: {fileID: 3374799921171712527}
+  - component: {fileID: 821996444693458898}
   m_Layer: 0
   m_Name: LoadNextScene
   m_TagString: Untagged
@@ -58,7 +58,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3374799921171712527
+--- !u!114 &821996444693458898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4208671750506664936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da898fbfbd127fa4aae987e0d5cefd80, type: 3}
+  m_Script: {fileID: 11500000, guid: b1f884e4cad12134a999a1e4a9f967f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCompleteUI: {fileID: 0}

@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EnemyAnimationEventHandler : MonoBehaviour
 {
-    private GameObject enemyParent;
     private EnemyCombat enemyCombat;
 
     private void Awake()
     {
-        enemyParent = GetComponentInParent<Transform>().gameObject;
         enemyCombat = GetComponentInParent<EnemyCombat>();
     }
 
@@ -20,7 +18,7 @@ public class EnemyAnimationEventHandler : MonoBehaviour
 
     public void callStoppedAttacking()
     {
-        enemyCombat.stoppedAttacking();
+        enemyCombat.StoppedAttacking();
     }
 
     public void callNotTakingHit()

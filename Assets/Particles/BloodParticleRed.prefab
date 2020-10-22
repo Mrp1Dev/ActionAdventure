@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4115499537208987960}
   - component: {fileID: 7884821783899821184}
   m_Layer: 10
-  m_Name: BloodParticle
+  m_Name: BloodParticleRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.8
+      scalar: 1
       minScalar: 0.4
       maxCurve:
         serializedVersion: 2
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 2
       minColor: {r: 0.4, g: 0, b: 0, a: 1}
-      maxColor: {r: 0.7924528, g: 0.03364185, b: 0.112592995, a: 1}
+      maxColor: {r: 0.735849, g: 0.0034709943, b: 0.07936528, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -975,8 +975,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 35
-        minScalar: 15
+        scalar: 60
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -1040,39 +1040,30 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: 1
-          outSlope: 1
+          value: 0.85526466
+          inSlope: 0.5594912
+          outSlope: 0.5594912
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.10451833
         - serializedVersion: 3
-          time: 0.5480919
-          value: 0.99603814
-          inSlope: -0.49955446
-          outSlope: -0.49955446
+          time: 0.85504514
+          value: 0.8756128
+          inSlope: -0.8429925
+          outSlope: -0.8429925
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.96136934
-          value: 0.90850794
-          inSlope: -3.9539227
-          outSlope: -3.9539227
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.82659405
+          outWeight: 0.63179517
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: 1
-          outSlope: 1
+          inSlope: -0.11288091
+          outSlope: -0.11288091
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.8041427
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2

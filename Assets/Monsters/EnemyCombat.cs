@@ -23,24 +23,24 @@ public class EnemyCombat : MonoBehaviour
     private bool isAttacking = false;
     private bool onSamePlatform;
     public LayerMask playerLayer;
-    private bool canAttack=true;
+    private bool canAttack = true;
     public float timeBetweenAttacks;
 
 
-    private bool takingHit=false;
+    private bool takingHit = false;
     public bool dead = false;
-    [SerializeField] private int goldToIncrement=0;
+    [SerializeField] private int goldToIncrement = 0;
     public Transform attackPos;
     public float attackRange;
-    [SerializeField] float attackDistance=1.5f;
+    [SerializeField] float attackDistance = 1.5f;
 
 
-    [SerializeField] private bool bossMode=false;
+    [SerializeField] private bool bossMode = false;
     private void Awake()
     {
         bloodParticle = GetComponentInChildren<ParticleSystem>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-        
+
     }
     // Start is called before the first frame update
     void Start()
@@ -59,8 +59,8 @@ public class EnemyCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkHealthStatus();
-        if((player.transform.position.y-transform.position.y)< 1.5f)
+        CheckHealthStatus();
+        if ((player.transform.position.y - transform.position.y) < 1.5f)
         {
             onSamePlatform = true;
         }
@@ -79,29 +79,24 @@ public class EnemyCombat : MonoBehaviour
 
     }
 
-    public void takeDamage(float damageGiven, bool isPoison=false)
+    public void TakeDamage(float damageGiven, bool isPoison = false)
     {
-        if(!bossMode)
-            isAttacking = false;
+        isAttacking = false;
         GetComponent<EnemyAI>().HasSeenPlayer = true;
         health -= damageGiven;
         if (!isPoison)
         {
-            if (!bossMode)
-            {
-                animator.SetTrigger("TakeHit");
-                takingHit = true;
-            }
+            animator.SetTrigger("TakeHit");
+            takingHit = true;
+
             bloodEffect.PlayDelayed(0.05f);
             canAttack = true;
         }
 
-
-
         CameraShaker.Instance.ShakeOnce(3f, 2f, 0.1f, 0.1f);
-        
+
         bloodParticle.Play();
-        if (checkHealthStatus())
+        if (CheckHealthStatus())
         {
             dead = true;
 
@@ -115,17 +110,16 @@ public class EnemyCombat : MonoBehaviour
             else
             {
                 DeathKnockback();
-            }          
+            }
             GetComponent<Collider2D>().enabled = false;
             Debug.Log("Death has seen this enemy :D");
         }
     }
 
-    bool checkHealthStatus()
+    bool CheckHealthStatus()
     {
         if (health <= 0f)
         {
-
             return true;
         }
         else
@@ -136,7 +130,7 @@ public class EnemyCombat : MonoBehaviour
 
     public void CallDie()
     {
-        if(!bossMode)
+        if (!bossMode)
             Invoke("die", 1f);
     }
 
@@ -147,7 +141,7 @@ public class EnemyCombat : MonoBehaviour
         CameraShaker.Instance.ShakeOnce(8f, 2f, 0.1f, 0.1f);
     }
 
-    public IEnumerator knockback()
+    public IEnumerator Knockback()
     {
         Debug.Log("Knockbacked");
         Vector2 knockbackVector = new Vector2(knockbackPower * (transform.localScale.x * -1f), 0f);
@@ -156,10 +150,10 @@ public class EnemyCombat : MonoBehaviour
 
         GetComponent<EnemyAI>().enabled = false;
         yield return new WaitForSeconds(1f);
-        if (!dead) ;
-        //GetComponent<EnemyAI>().enabled = true;
+        if (!dead)
+            GetComponent<EnemyAI>().enabled = true;
     }
-    
+
 
     void die()
     {
@@ -174,7 +168,7 @@ public class EnemyCombat : MonoBehaviour
 
     void attack()
     {
-        if(bossMode && health<(0.5*StartHealth))
+        if (bossMode && health < (0.5 * StartHealth))
         {
             animator.SetTrigger("Attack2");
         }
@@ -186,24 +180,15 @@ public class EnemyCombat : MonoBehaviour
         isAttacking = true;
         canAttack = false;
         rb.velocity = new Vector2(0f, rb.velocity.y);
-        if (bossMode)
-        {
-            GetComponent<EnemyAI>().enabled = false;
-        }
     }
 
-    public void stoppedAttacking()
+    public void StoppedAttacking()
     {
         isAttacking = false;
-        if (bossMode)
-        {
-            GetComponent<EnemyAI>().enabled = true;
-        }
-        StartCoroutine(canAttackCheck());
-
+        StartCoroutine(CanAttackCheck());
     }
 
-    private IEnumerator canAttackCheck()
+    private IEnumerator CanAttackCheck()
     {
         yield return new WaitForSecondsRealtime(timeBetweenAttacks);
         canAttack = true;
@@ -213,7 +198,7 @@ public class EnemyCombat : MonoBehaviour
     {
         for (int i = 0; i < cycles; i++)
         {
-            takeDamage(damage, true);
+            TakeDamage(damage, true);
             yield return new WaitForSecondsRealtime(timePerCycle);
         }
         yield return null;
@@ -221,8 +206,8 @@ public class EnemyCombat : MonoBehaviour
 
     public void dealDamage()
     {
-        
-        Collider2D playerCollider= Physics2D.OverlapCircle(attackPos.position, attackRange, playerLayer);
+
+        Collider2D playerCollider = Physics2D.OverlapCircle(attackPos.position, attackRange, playerLayer);
         if (playerCollider != null)
         {
             playerCollider.gameObject.GetComponent<PlayerCombat>().takeDamage(damage);

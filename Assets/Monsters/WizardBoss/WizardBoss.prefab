@@ -133,8 +133,8 @@ MonoBehaviour:
   dead: 0
   goldToIncrement: 10000
   attackPos: {fileID: 5448027398780540903}
-  attackRange: 4.49
-  attackDistance: 5
+  attackRange: 4.43
+  attackDistance: 5.56
   bossMode: 1
 --- !u!82 &-4284608594693578285
 AudioSource:

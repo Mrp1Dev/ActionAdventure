@@ -8,7 +8,7 @@ public static class SaveManager
 {
     [HideInInspector] public static SaveData SaveData = new SaveData();
 
-    [RuntimeInitializeOnLoadMethod]
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void Awake()
     { 
         Load();

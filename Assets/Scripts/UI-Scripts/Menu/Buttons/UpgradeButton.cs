@@ -16,6 +16,7 @@ public class UpgradeButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
+        if(!IsMaxed())
         cost = upgradeSO.DataList[SaveManager.SaveData.GetStatLevel(upgradeSO.UpgradeType) + 1].cost;
     }
 

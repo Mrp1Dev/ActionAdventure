@@ -45,7 +45,7 @@ public class AnimationEventHandler : MonoBehaviour
 
     public void callSpawnBullet()
     {
-        playerRanged.spawnBullet(playerRanged.SelectedArrow);
+        playerRanged.SpawnBullet(playerRanged.SelectedArrow);
     }
 
     public void notShooting()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4115499537208987960}
   - component: {fileID: 7884821783899821184}
   m_Layer: 10
-  m_Name: BloodParticle
+  m_Name: BloodParticleBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8826450140858320842}
   serializedVersion: 6
-  lengthInSec: 0.1
+  lengthInSec: 1
   simulationSpeed: 0.6
   stopAction: 0
   cullingMode: 0
@@ -975,8 +975,8 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 35
-        minScalar: 15
+        scalar: 60
+        minScalar: 30
         maxCurve:
           serializedVersion: 2
           m_Curve:

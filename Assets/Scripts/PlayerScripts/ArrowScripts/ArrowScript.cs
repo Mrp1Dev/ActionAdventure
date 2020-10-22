@@ -7,9 +7,8 @@ public class ArrowScript : MonoBehaviour
     [SerializeField] ArrowType arrowType;
     [SerializeField] int poisonCycles;
 
-    [SerializeField] float explosionRange;
-    [SerializeField] Vector3 tipOffset;
-    [SerializeField] float bombDamage;
+    [SerializeField] private float explosionRange;
+    [SerializeField] private Vector3 tipOffset;
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private AudioSource arrowHitSound;
 
@@ -49,7 +48,7 @@ public class ArrowScript : MonoBehaviour
             float damage = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRanged>().ArrowDamage;
             EnemyCombat enemyCombat = collision.gameObject.GetComponent<EnemyCombat>();
             arrowHitSound.PlayDelayed(0.05f);
-            enemyCombat.takeDamage(damage);
+                 enemyCombat.TakeDamage(damage);
 
             switch (arrowType)
             {
@@ -73,8 +72,8 @@ public class ArrowScript : MonoBehaviour
                     for (int i = 0; i < hitEnemies.Length; i++)
                     {
 
-                        hitEnemies[i].GetComponent<EnemyCombat>().takeDamage(bombDamage);
-                        hitEnemies[i].GetComponent<EnemyCombat>().StartCoroutine(hitEnemies[i].GetComponent<EnemyCombat>().knockback());
+                        hitEnemies[i].GetComponent<EnemyCombat>().TakeDamage(damage*10);
+                        hitEnemies[i].GetComponent<EnemyCombat>().StartCoroutine(hitEnemies[i].GetComponent<EnemyCombat>().Knockback());
                     }
                     break;
             }

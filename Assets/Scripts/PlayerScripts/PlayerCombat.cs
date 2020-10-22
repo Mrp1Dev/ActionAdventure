@@ -100,7 +100,7 @@ public class PlayerCombat : MonoBehaviour
        Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].GetComponent<EnemyCombat>().takeDamage(damage);
+            enemies[i].GetComponent<EnemyCombat>().TakeDamage(damage);
             if (doKnockback)
             {
                 enemies[i].GetComponent<EnemyCombat>().StartCoroutine("knockback");

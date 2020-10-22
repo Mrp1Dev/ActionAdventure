@@ -8,7 +8,7 @@ public class DeathFall : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyCombat>().takeDamage(10000f);
+            collision.gameObject.GetComponent<EnemyCombat>().TakeDamage(10000f);
         }
         if (collision.gameObject.tag == "Player")
         {
