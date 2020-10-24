@@ -1,21 +1,20 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float movementHorizontal;
-    public float moveSpeed=20;
+    public float moveSpeed = 20;
 
-    public int jumpForce= 750;
+    public int jumpForce = 750;
     public float fallDamageHeight;
     public float fallDamagePerMetre;
     [SerializeField] private AudioSource jumpAudio;
 
-    private Rigidbody2D rigidbody2D;  
+    private Rigidbody2D rigidbody2D;
     private Animator sprite_Animator;
     private GameObject playerSprite;
 
-    private bool facingRight=true;
+    private bool facingRight = true;
     public bool isGrounded = false;
     public bool canMove = true;
 
@@ -29,8 +28,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 size = new Vector3(groundHitSize.x, groundHitSize.y, 0f);
         Gizmos.DrawCube(groundHitPos.position, size);
     }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerSprite = transform.GetChild(0).gameObject;
@@ -38,67 +38,66 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (canMove && !GetComponent<PlayerCombat>().TakingHit && !GetComponent<PlayerRanged>().IsShooting) { movePlayer(); }
     }
 
-    void Update()
+    private void Update()
     {
         groundCheck();
-        if (Input.GetButtonDown("Jump")&&isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !PauseManager.Instance.Paused)
         {
             Jump();
         }
 
-
-        if (movementHorizontal > 0 && facingRight==false)
-        {
-            flipPlayer();
-        } else if (movementHorizontal < 0 && facingRight==true)
+        if (movementHorizontal > 0 && facingRight == false)
         {
             flipPlayer();
         }
-     
+        else if (movementHorizontal < 0 && facingRight == true)
+        {
+            flipPlayer();
+        }
     }
 
-    void movePlayer()
+    private void movePlayer()
     {
-        movementHorizontal = Input.GetAxis("Horizontal")*0.4f + Input.GetAxisRaw("Horizontal")*0.6f;
+        movementHorizontal = Input.GetAxis("Horizontal") * 0.4f + Input.GetAxisRaw("Horizontal") * 0.6f;
         rigidbody2D.velocity = new Vector2(movementHorizontal * moveSpeed, rigidbody2D.velocity.y);
         sprite_Animator.SetFloat("Speed", Mathf.Abs(movementHorizontal));
     }
 
-    void groundCheck()
+    private void groundCheck()
     {
         RaycastHit2D groundHit = Physics2D.BoxCast(groundHitPos.position, groundHitSize, 0f, Vector2.down, groundHitSize.y, platform);
 
-        if (groundHit.collider == null) 
+        if (groundHit.collider == null)
         {
-            isGrounded = false; 
+            isGrounded = false;
         }
         else { isGrounded = true; }
 
         sprite_Animator.SetBool("IsGrounded", isGrounded);
     }
 
-    void Jump()
+    private void Jump()
     {
-
         rigidbody2D.AddForce(Vector2.up * jumpForce);
         GetComponent<PlayerCombat>().AttackEnded();
         AudioSource[] otherAudio = GetComponents<AudioSource>();
-        foreach(var other in otherAudio) { other.Stop(); }
+        foreach (var other in otherAudio) { other.Stop(); }
         jumpAudio.Play();
         GetComponent<PlayerCombat>().TakingHit = false;
     }
 
-    float startHeight=0f;
-    float endHeight=0f;
-    void OnCollisionEnter2D(Collision2D collision)
+    private float startHeight = 0f;
+    private float endHeight = 0f;
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.tag == "Platform")
-        {         
+        if (collision.collider.gameObject.tag == "Platform")
+        {
             endHeight = transform.position.y;
         }
 
@@ -109,17 +108,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.gameObject.tag == "Platform")
         {
             startHeight = transform.position.y;
         }
     }
-    void flipPlayer()
-    {        
+
+    private void flipPlayer()
+    {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-
 }

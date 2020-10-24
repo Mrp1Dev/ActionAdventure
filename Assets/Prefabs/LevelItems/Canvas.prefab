@@ -1229,6 +1229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891767544279269108}
+  - component: {fileID: 1122497860776478638}
   m_Layer: 5
   m_Name: LevelFinishScreen
   m_TagString: Untagged
@@ -1259,6 +1260,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1122497860776478638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859414641126108931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450c2d3b09642f1418054e1b5c315610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3896837318438833848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571675444341247786}
+  - component: {fileID: 5841369261703572302}
   m_Layer: 5
   m_Name: DeathScreen
   m_TagString: Untagged
@@ -2725,6 +2739,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5841369261703572302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476519850087960959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450c2d3b09642f1418054e1b5c315610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7663533371800371048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3589,7 +3615,7 @@ GameObject:
   - component: {fileID: 603563633812707830}
   - component: {fileID: 3407467297197166801}
   - component: {fileID: 222821783860951302}
-  - component: {fileID: 4243254494559382254}
+  - component: {fileID: 874673702599047403}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -3698,7 +3724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4243254494559382254
+--- !u!114 &874673702599047403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3707,6 +3733,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9122379324253344182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b440632b044c64fb3b6fbc0cdbb90e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ba09a227b0b90e4ebbea4a69a1cce2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

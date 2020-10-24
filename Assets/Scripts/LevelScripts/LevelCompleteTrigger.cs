@@ -11,7 +11,6 @@ public class LevelCompleteTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             levelCompleteUI.SetActive(true);
-            Time.timeScale = 0;
         }
     }
 }

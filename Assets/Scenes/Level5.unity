@@ -735,6 +735,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 821996444693458898, guid: d38f2409d9d30d34ab7fb5008d002db0, type: 3}
+      propertyPath: levelCompleteUI
+      value: 
+      objectReference: {fileID: 998282811}
     - target: {fileID: 4208671750506664936, guid: d38f2409d9d30d34ab7fb5008d002db0, type: 3}
       propertyPath: m_Name
       value: LoadNextScene
@@ -3667,7 +3671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_RootOrder
-      value: 31
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3731,6 +3735,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
+--- !u!1 &998282809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5962452086556700561, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
+  m_PrefabInstance: {fileID: 998282808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &998282810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7476519850087960959, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
+  m_PrefabInstance: {fileID: 998282808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &998282811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3859414641126108931, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
+  m_PrefabInstance: {fileID: 998282808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1061119869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61595,6 +61614,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6694457431435372313, guid: bed08c4e8b0cefa4491e2aa099638ccb, type: 3}
+      propertyPath: deathUIScreen
+      value: 
+      objectReference: {fileID: 998282810}
     - target: {fileID: 7547155430092134599, guid: bed08c4e8b0cefa4491e2aa099638ccb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.3743577
@@ -61709,7 +61732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604946042
 GameObject:
@@ -69200,7 +69223,7 @@ Transform:
   - {fileID: 1604946043}
   - {fileID: 1373748316}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1652326338
 PrefabInstance:
@@ -69259,6 +69282,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fac30f05aad0b649845e4f0ca60a654, type: 3}
+--- !u!1001 &1682555301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5904768748054462028, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_Name
+      value: '[PauseManager]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5089111
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.9626617
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -80.963806
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248893944540875004, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7296520402257858335, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
+      propertyPath: pauseUIPanel
+      value: 
+      objectReference: {fileID: 998282809}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fc069b752409e645acd9ce703ae4e3c, type: 3}
 --- !u!1001 &1753702684
 PrefabInstance:
   m_ObjectHideFlags: 0
