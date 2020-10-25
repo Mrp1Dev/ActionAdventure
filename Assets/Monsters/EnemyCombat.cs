@@ -16,7 +16,7 @@ public class EnemyCombat : MonoBehaviour
     public float deathKnockbackPower;
     public float knockbackPower;
     private GameObject player;
-    ParticleSystem bloodParticle;
+    private ParticleSystem bloodParticle;
     [SerializeField] private AudioSource bloodEffect;
 
     private float dist;
@@ -26,24 +26,23 @@ public class EnemyCombat : MonoBehaviour
     private bool canAttack = true;
     public float timeBetweenAttacks;
 
-
     private bool takingHit = false;
     public bool dead = false;
     [SerializeField] private int goldToIncrement = 0;
     public Transform attackPos;
     public float attackRange;
-    [SerializeField] float attackDistance = 1.5f;
-
+    [SerializeField] private float attackDistance = 1.5f;
 
     [SerializeField] private bool bossMode = false;
+
     private void Awake()
     {
         bloodParticle = GetComponentInChildren<ParticleSystem>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-
     }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         StartHealth = health;
         animator = GetComponentInChildren<Animator>();
@@ -57,7 +56,7 @@ public class EnemyCombat : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CheckHealthStatus();
         if ((player.transform.position.y - transform.position.y) < 1.5f)
@@ -67,7 +66,6 @@ public class EnemyCombat : MonoBehaviour
         else
         {
             onSamePlatform = false;
-
         }
 
         dist = player.transform.position.x - transform.position.x;
@@ -76,7 +74,6 @@ public class EnemyCombat : MonoBehaviour
         {
             attack();
         }
-
     }
 
     public void TakeDamage(float damageGiven, bool isPoison = false)
@@ -93,7 +90,7 @@ public class EnemyCombat : MonoBehaviour
             canAttack = true;
         }
 
-        CameraShaker.Instance.ShakeOnce(3f, 2f, 0.1f, 0.1f);
+        CameraShaker.Instance.ShakeOnce(3f, 4f, 0.1f, 0.1f);
 
         bloodParticle.Play();
         if (CheckHealthStatus())
@@ -116,7 +113,7 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
-    bool CheckHealthStatus()
+    private bool CheckHealthStatus()
     {
         if (health <= 0f)
         {
@@ -154,8 +151,7 @@ public class EnemyCombat : MonoBehaviour
             GetComponent<EnemyAI>().enabled = true;
     }
 
-
-    void die()
+    private void die()
     {
         SaveManager.SaveData.Gold += goldToIncrement;
         GameObject.Destroy(this.gameObject);
@@ -166,7 +162,7 @@ public class EnemyCombat : MonoBehaviour
         takingHit = false;
     }
 
-    void attack()
+    private void attack()
     {
         if (bossMode && health < (0.5 * StartHealth))
         {
@@ -206,7 +202,6 @@ public class EnemyCombat : MonoBehaviour
 
     public void dealDamage()
     {
-
         Collider2D playerCollider = Physics2D.OverlapCircle(attackPos.position, attackRange, playerLayer);
         if (playerCollider != null)
         {
@@ -222,6 +217,4 @@ public class EnemyCombat : MonoBehaviour
 
     public bool IsAttacking => isAttacking;
     public bool TakingHit => takingHit;
-
-
 }

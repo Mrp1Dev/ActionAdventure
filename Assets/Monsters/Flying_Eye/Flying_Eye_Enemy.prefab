@@ -122,7 +122,6 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   dead: 0
   goldToIncrement: 30
-  goldAudio: {fileID: 2580703115059220545}
   attackPos: {fileID: 5448027398780540903}
   attackRange: 0.39
   attackDistance: 1.5
@@ -140,7 +139,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 66504e476e995104ba8814f20cd507ca, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 0.8
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -183,7 +182,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0

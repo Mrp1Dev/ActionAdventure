@@ -8,13 +8,13 @@ using UnityEngine.UI;
 public class LevelButton : MonoBehaviour
 {
     [SerializeField] private int levelToOpen;
-    [SerializeField] private Animator transition;// the black image that slowly goes up in darkness.
+    [SerializeField] private GameObject transition;// the black image that slowly goes up in darkness.
     private bool hasTransitionStarted = false;
+
     public void OnClick()
     {
-        transition.SetTrigger("CallTransition");
+        transition.GetComponent<Animator>().SetTrigger("CallTransition");
         hasTransitionStarted = true;
-       
     }
 
     private void Awake()
@@ -32,11 +32,10 @@ public class LevelButton : MonoBehaviour
     {
         if (hasTransitionStarted)
         {
-            if (transition.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            if (transition.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             {
                 SceneManager.LoadScene(levelToOpen);
             }
-
         }
     }
 }
