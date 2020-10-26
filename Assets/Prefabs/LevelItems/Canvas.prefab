@@ -379,8 +379,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125.15, y: -120.399994}
-  m_SizeDelta: {x: 216.37256, y: 61.01155}
+  m_AnchoredPosition: {x: 90.96, y: -109.14}
+  m_SizeDelta: {x: 147.99634, y: 38.492973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105503090938866139
 MonoBehaviour:
@@ -691,13 +691,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976981205932001663}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7132504, w: 0.7009094}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7616834692335958726}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -91}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 66.86, y: 1.2}
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: edfe40ddd7f264a4ba6739a06471373b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9ca1fbaedb53944db85d02457a0269f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3374,8 +3374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96.373, y: -4.9}
-  m_SizeDelta: {x: 136.1865, y: 39.62494}
+  m_AnchoredPosition: {x: 92.522, y: -0.000002861}
+  m_SizeDelta: {x: 75.51143, y: 25.392517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &511463596006843311
 CanvasRenderer:
@@ -3406,8 +3406,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4c73f6ad84d5089419a081e7f6abad06, type: 3}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: d768fc37c4642dc4db816c23e50780c0, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

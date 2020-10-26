@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using EZCameraShake;
+using System.Collections;
 using UnityEngine;
-using EZCameraShake;
 
 public class EnemyCombat : MonoBehaviour
 {

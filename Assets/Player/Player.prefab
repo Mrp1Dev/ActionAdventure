@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101760182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.04, y: -0.31, z: 0}
+  m_LocalPosition: {x: 1.04, y: -0.145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7547155430092134599}
@@ -193,6 +193,7 @@ MonoBehaviour:
     m_Bits: 256
   slashAudio: {fileID: 1276223623811050452}
   defaultHealth: 100
+  deathUIScreen: {fileID: 0}
 --- !u!114 &957546150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e80a8c39df174b429189a5035e2ac1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowAmount: 102700000500000002000000
   bowDrawAudio: {fileID: 3105530482358424091}
   defaultShootTimer: 1
   arrowDamage: 5

@@ -51,7 +51,6 @@ MonoBehaviour:
   poisonCycles: 0
   explosionRange: 0
   tipOffset: {x: 0, y: 0, z: 0}
-  bombDamage: 0
   particlePrefab: {fileID: 0}
   arrowHitSound: {fileID: 8667292106921140878}
   enemyLayer:
@@ -224,13 +223,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8785278596658329261}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7132504, w: 0.7009094}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.35, y: 0, z: 0}
+  m_LocalScale: {x: 0.49300283, y: 0.49300283, z: 0}
   m_Children: []
   m_Father: {fileID: 5343845442434867414}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -91}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &5521721660616479679
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -271,7 +270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: edfe40ddd7f264a4ba6739a06471373b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9ca1fbaedb53944db85d02457a0269f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
