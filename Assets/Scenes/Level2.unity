@@ -370,7 +370,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &40482332
 PrefabInstance:
@@ -818,7 +818,7 @@ Transform:
   - {fileID: 1060170279}
   - {fileID: 1606060905}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &462608267
 PrefabInstance:
@@ -4910,6 +4910,87 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1061749096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.995546
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23.534489
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323065, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323068, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: m_Name
+      value: StarsParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 90.7219
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 60.27971
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 0.00000088844604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: ShapeModule.m_Position.z
+      value: 5.860649
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: -0.0012750337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
 --- !u!1001 &1182206412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6245,7 +6326,7 @@ Transform:
   m_LocalScale: {x: 31.982111, y: 31.982111, z: 31.982111}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2074639109
 PrefabInstance:
