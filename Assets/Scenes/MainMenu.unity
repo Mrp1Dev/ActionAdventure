@@ -4145,7 +4145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Thanks:\nhttps://luizmelo.itch.io/ \nhttps://rvros.itch.io/\nhttps;//freesound.org/\nfor
+  m_text: "Thanks:\nhttps://luizmelo.itch.io/ \nhttps://rvros.itch.io/\nhttps://freesound.org/\nfor
     free assets."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee8574f8cb7c8f1468b93d0e2b84db67, type: 2}
@@ -4787,7 +4787,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.14440194, g: 0.19767119, b: 0.5566038, a: 0}
+  m_BackGroundColor: {r: 0.1792453, g: 0.043120325, b: 0.043120325, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
