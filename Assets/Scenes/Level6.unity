@@ -851,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 3896837319970133849, guid: d7103a2362072bb40b49c0c4e09b8594, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1753,6 +1753,14 @@ PrefabInstance:
     - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
       propertyPath: ShapeModule.m_Position.y
       value: -0.000099127166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}

@@ -42996,5 +42996,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarsParticleSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277969833719323070, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653c6eb45c76bcd408a2f8016dc052e2, type: 3}
