@@ -5,24 +5,24 @@ using UnityEngine;
 
 public class FinalStopper : MonoBehaviour
 {
+    [SerializeField] private GameObject wizard;
     private GameObject Player;
-    bool hasCompleted = false;
+    private bool hasCompleted = false;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float dist = Player.transform.position.x - transform.position.x;
-        
+
         if (Mathf.Abs(dist) < 6f && !hasCompleted)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if(enemies != null)
+            if (wizard.GetComponent<EnemyCombat>().dead)
             {
                 hasCompleted = true;
                 StartCoroutine(AllowPass());
@@ -30,7 +30,7 @@ public class FinalStopper : MonoBehaviour
         }
     }
 
-    IEnumerator AllowPass()
+    private IEnumerator AllowPass()
     {
         GetComponentInChildren<ParticleSystem>().Play();
         yield return new WaitForSecondsRealtime(1f);
@@ -39,5 +39,5 @@ public class FinalStopper : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSecondsRealtime(2f);
         Destroy(this.gameObject);
-    } 
+    }
 }
