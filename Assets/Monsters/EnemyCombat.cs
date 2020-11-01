@@ -132,7 +132,10 @@ public class EnemyCombat : MonoBehaviour
 
     private void DeathKnockback()
     {
-        Vector2 knockbackVector = new Vector2(deathKnockbackPower * (transform.localScale.x * -1f), 0f);
+        Vector2 knockbackVector =
+            new Vector2(deathKnockbackPower * -Mathf.Sign(player.transform.position.sqrMagnitude
+            - transform.position.sqrMagnitude)
+            , 0f);
         rb.AddForce(knockbackVector);
         CameraShaker.Instance.ShakeOnce(8f, 2f, 0.1f, 0.1f);
     }
@@ -140,10 +143,12 @@ public class EnemyCombat : MonoBehaviour
     public IEnumerator Knockback()
     {
         Debug.Log("Knockbacked");
-        Vector2 knockbackVector = new Vector2(knockbackPower * (transform.localScale.x * -1f), 0f);
+        Vector2 knockbackVector =
+            new Vector2(knockbackPower * -Mathf.Sign(player.transform.position.sqrMagnitude
+            - transform.position.sqrMagnitude)
+            , 0f);
         rb.AddForce(knockbackVector);
         CameraShaker.Instance.ShakeOnce(4f, 2f, 0.1f, 0.2f);
-
         GetComponent<EnemyAI>().enabled = false;
         yield return new WaitForSeconds(1f);
         if (!dead)

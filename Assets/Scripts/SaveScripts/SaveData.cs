@@ -12,7 +12,8 @@ public class SaveData
     [SerializeField] private List<int> levelValues = new List<int>();
     [SerializeField] private int gold = 0;
     [SerializeField] private int levelsUnlocked = 1;
-    [SerializeField] private int[] arrowAmount = new int[] { 10000, 10, 2 };
+    [SerializeField] private int[] arrowAmount = new int[] { 99999, 10, 2 };
+    [SerializeField] private bool introDone = false;
 
     public event Action DataUpdated;
 
@@ -37,6 +38,16 @@ public class SaveData
         set
         {
             gold = value;
+            DataUpdated?.Invoke();
+        }
+    }
+
+    public bool IntroDone
+    {
+        get { return introDone; }
+        set
+        {
+            introDone = value;
             DataUpdated?.Invoke();
         }
     }

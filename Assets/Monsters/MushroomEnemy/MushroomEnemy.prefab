@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  health: 450
+  health: 390
   isSuper: 0
   superMultiplier: 3
   deathKnockbackPower: 2500
