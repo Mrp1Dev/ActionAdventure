@@ -92,7 +92,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 22e3974af736a9a45b5ba3175528c0c9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 5263983526022161200}
   - component: {fileID: 7902613537179231147}
   - component: {fileID: 5333642937893341997}
+  - component: {fileID: 5169858171687754888}
   m_Layer: 0
   m_Name: Enemy_Sprite
   m_TagString: Untagged
@@ -463,6 +464,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15dce90200871324c81285ac82f9d045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5169858171687754888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522046040110405665}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 33bb1a8b9db6d1a3db282dbe657e632b00000000
+  m_ShapePath:
+  - {x: -0.22277069, y: -0.5876131, z: 0}
+  - {x: 0.6673317, y: -0.6158447, z: 0}
+  - {x: 0.49600983, y: 0.4361906, z: 0}
+  - {x: -0.5463867, y: 0.8275881, z: 0}
+  - {x: -1.1753998, y: 0.38292694, z: 0}
+  m_ShapePathHash: 252726479
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 57002
 --- !u!1001 &1495258350723134391
 PrefabInstance:
   m_ObjectHideFlags: 0

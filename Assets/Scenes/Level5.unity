@@ -4472,18 +4472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4974280929821245812, guid: b399951b86098404ba2df3544f052b31, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.09618893
-      objectReference: {fileID: 0}
-    - target: {fileID: 4974280929821245812, guid: b399951b86098404ba2df3544f052b31, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.03809184
-      objectReference: {fileID: 0}
-    - target: {fileID: 4974280929821245812, guid: b399951b86098404ba2df3544f052b31, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.18867922
-      objectReference: {fileID: 0}
     - target: {fileID: 4974280930241046857, guid: b399951b86098404ba2df3544f052b31, type: 3}
       propertyPath: m_Name
       value: CameraHolder
@@ -62462,7 +62450,7 @@ CompositeCollider2D:
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

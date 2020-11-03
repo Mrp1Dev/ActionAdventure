@@ -708,7 +708,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6037,7 +6037,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7487,6 +7487,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867902643}
   m_CullTransparentMesh: 0
+--- !u!1001 &1884083318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.665955
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23.855133
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386528, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226922796390386530, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
+      propertyPath: m_Name
+      value: Global Light 2D
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 164a0bd015383b741b2b4af43e6c181c, type: 3}
 --- !u!1 &1916027907
 GameObject:
   m_ObjectHideFlags: 0
@@ -7544,7 +7601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: They can move verticlly too!
+  m_text: They can move vertically too!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee8574f8cb7c8f1468b93d0e2b84db67, type: 2}
   m_sharedMaterial: {fileID: -3713410297716687310, guid: ee8574f8cb7c8f1468b93d0e2b84db67, type: 2}
