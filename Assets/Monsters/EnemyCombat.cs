@@ -7,6 +7,7 @@ public class EnemyCombat : MonoBehaviour
     public float damage;
     public float health;
     [SerializeField] private bool isSuper;
+    public bool IsSuper => isSuper;
     [SerializeField] private int superMultiplier = 3;
     private SpriteRenderer sprite;
     public float StartHealth { get; set; }

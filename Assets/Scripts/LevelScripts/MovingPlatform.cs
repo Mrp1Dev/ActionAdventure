@@ -34,7 +34,8 @@ public class MovingPlatform : MonoBehaviour
 
             transform.position += moveDelta;
 
-            objectsOnTop.ForEach(go => go.transform.position += moveDelta);
+            objectsOnTop.ForEach(go =>
+            { if (go != null) go.transform.position += moveDelta; });
 
             if (transform.position == targetPos)
             {

@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 5263983526022161200}
   - component: {fileID: 7902613537179231147}
   - component: {fileID: 5333642937893341997}
+  - component: {fileID: 4095310096493523029}
   m_Layer: 0
   m_Name: Enemy_Sprite
   m_TagString: Untagged
@@ -473,6 +474,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15dce90200871324c81285ac82f9d045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4095310096493523029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522046040110405665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 33bb1a8b9db6d1a3db282dbe657e632b00000000
+  m_ShapePath:
+  - {x: -0.64674586, y: -2.6228707, z: 0}
+  - {x: 0.56362665, y: -2.596332, z: 0}
+  - {x: 0.29586014, y: 0.6931649, z: 0}
+  - {x: -0.17045705, y: 0.6434676, z: 0}
+  m_ShapePathHash: 585354144
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 78722
 --- !u!1001 &1127254714591469272
 PrefabInstance:
   m_ObjectHideFlags: 0
