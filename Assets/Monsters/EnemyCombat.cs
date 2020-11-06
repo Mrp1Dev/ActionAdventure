@@ -90,7 +90,6 @@ public class EnemyCombat : MonoBehaviour
             canAttack = true;
         }
 
-        CameraShaker.Instance.ShakeOnce(3f, 4f, 0.1f, 0.1f);
 
         bloodParticle.Play();
         if (CheckHealthStatus())
@@ -138,7 +137,6 @@ public class EnemyCombat : MonoBehaviour
             - transform.position.sqrMagnitude)
             , 0f);
         rb.AddForce(knockbackVector);
-        CameraShaker.Instance.ShakeOnce(8f, 2f, 0.1f, 0.1f);
     }
 
     public IEnumerator Knockback()
@@ -149,7 +147,6 @@ public class EnemyCombat : MonoBehaviour
             - transform.position.sqrMagnitude)
             , 0f);
         rb.AddForce(knockbackVector);
-        CameraShaker.Instance.ShakeOnce(4f, 2f, 0.1f, 0.2f);
         GetComponent<EnemyAI>().enabled = false;
         yield return new WaitForSeconds(1f);
         if (!dead)
