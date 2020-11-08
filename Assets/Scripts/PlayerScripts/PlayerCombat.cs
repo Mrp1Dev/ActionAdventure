@@ -127,7 +127,6 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("TakeHit");
         takingHit = true;
         rb.velocity = new Vector2(0f, rb.velocity.y);
-
         CameraShaker.Instance.ShakeOnce(10f, 4f, 0.1f, 0.1f);
 
         StartCoroutine("checkHealthStatus");

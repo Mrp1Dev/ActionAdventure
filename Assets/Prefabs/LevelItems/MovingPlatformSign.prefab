@@ -275,7 +275,7 @@ MonoBehaviour:
   - {x: -0.7731705, y: 0.8234937, z: 0}
   m_ShapePathHash: 461255285
   m_Mesh: {fileID: 0}
-  m_InstanceId: 51038
+  m_InstanceId: 39026
 --- !u!50 &5520747657624556889
 Rigidbody2D:
   serializedVersion: 4
@@ -321,7 +321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.75, y: 1.8125}
+  m_Size: {x: 0.10045624, y: 1.8125}
   m_EdgeRadius: 0
 --- !u!1 &7719655922601064249
 GameObject:

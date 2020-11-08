@@ -64,11 +64,10 @@ public class ArrowScript : MonoBehaviour
                 case ArrowType.Bomb:
                     Debug.Log("Bombed");
                     Vector2 tip = transform.position + tipOffset;
-                    CameraShaker.Instance.ShakeOnce(10f, 7f, 0.1f, 0.2f);
                     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(tip, explosionRange, enemyLayer);
 
                     Instantiate(particlePrefab, tip, Quaternion.identity);
-
+                    CameraShaker.Instance.ShakeOnce(10f, 7f, 0.1f, 0.2f);
                     for (int i = 0; i < hitEnemies.Length; i++)
                     {
 
