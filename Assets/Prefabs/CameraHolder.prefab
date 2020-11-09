@@ -175,5 +175,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultPosInfluence: {x: 0.15, y: 0.15, z: 0}
   DefaultRotInfluence: {x: 0, y: 0, z: 0.25}
-  RestPositionOffset: {x: 0, y: 0, z: 0}
+  RestPositionOffset: {x: 0, y: 0, z: -10}
   RestRotationOffset: {x: 0, y: 0, z: 0}

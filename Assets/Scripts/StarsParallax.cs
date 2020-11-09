@@ -1,22 +1,21 @@
-﻿using Cinemachine;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StarsParallax : MonoBehaviour
 {
     [SerializeField] private float parallax = 0.2f;
-    private Transform camera;
+    private Transform player;
     private Vector3 lastPlayerPos;
 
     private void Awake()
     {
-        camera = FindObjectOfType<CinemachineVirtualCamera>().transform;
-        lastPlayerPos = camera.position;
+        player = FindObjectOfType<PlayerMovement>().transform;
+        lastPlayerPos = player.position;
     }
 
     private void Update()
     {
-        var playerPosDelta = (camera.position - lastPlayerPos) * parallax;
+        var playerPosDelta = (player.position - lastPlayerPos) * parallax;
         transform.position += playerPosDelta;
-        lastPlayerPos = camera.position;
+        lastPlayerPos = player.position;
     }
 }
