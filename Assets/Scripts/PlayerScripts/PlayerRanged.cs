@@ -44,10 +44,13 @@ public class PlayerRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ArrowSelectCheck();
-        ShootCheck();
+        if (!PauseManager.Instance.Paused)
+        {
+            ArrowSelectCheck();
+            ShootCheck();
 
-        animator.SetBool("Shooting", isShooting);
+            animator.SetBool("Shooting", isShooting);
+        }
     }
 
     private void ArrowSelectCheck()
@@ -123,10 +126,10 @@ public class PlayerRanged : MonoBehaviour
     public int[] ArrowAmount
     {
         get { return arrowAmount; }
-        set 
+        set
         {
             arrowAmount = value;
-            
+
         }
     }
 

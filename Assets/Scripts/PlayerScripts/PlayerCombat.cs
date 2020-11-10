@@ -10,7 +10,7 @@ public class PlayerCombat : MonoBehaviour
     private AnimatorStateInfo animStateInfo;
     private Rigidbody2D rb;
     private PlayerMovement playerMovement;
-
+    private PlayerRanged playerRanged;
     public float damage;
     public float attackRange;
     private Transform attackPos;
@@ -31,7 +31,7 @@ public class PlayerCombat : MonoBehaviour
         animator = playerSprite.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerMovement = GetComponent<PlayerMovement>();
-
+        playerRanged = GetComponent<PlayerRanged>();
         health = defaultHealth;
     }
 
@@ -40,9 +40,9 @@ public class PlayerCombat : MonoBehaviour
     {
         animStateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !PauseManager.Instance.Paused)
         {
-            if (playerMovement.isGrounded)
+            if (playerMovement.isGrounded && !playerRanged.IsShooting)
             {
                 tryAttackSequence();
             }
@@ -142,6 +142,7 @@ public class PlayerCombat : MonoBehaviour
             GetComponent<PlayerMovement>().enabled = false;
             FindObjectOfType<CameraFollow>().enabled = false;
             Vector2 knockbackVector = new Vector2(2500 * (transform.localScale.x * -1f), 0f);
+            IsDead = true;
             rb.AddForce(knockbackVector);
             yield return new WaitForSeconds(1f);
             deathUIScreen.SetActive(true);
@@ -172,4 +173,6 @@ public class PlayerCombat : MonoBehaviour
 
     public Transform AttackPos => attackPos;
     public float AttackRanage => attackRange;
+
+    public bool IsDead { get; private set; }
 }

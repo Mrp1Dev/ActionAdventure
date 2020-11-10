@@ -527,7 +527,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Take_Hit
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7507535916837074690}
@@ -579,7 +579,7 @@ AnimatorStateMachine:
     m_Position: {x: 510, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2596632851098854184}
-    m_Position: {x: 490, y: -120, z: 0}
+    m_Position: {x: 400, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5634271451013890847}
     m_Position: {x: 130, y: -80, z: 0}

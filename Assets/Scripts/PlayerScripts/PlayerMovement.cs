@@ -96,6 +96,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        BoxCollider2D collider = GetComponent<BoxCollider2D>();
+        if (collision.contacts[0].point.y >
+            transform.position.y - collider.bounds.extents.y)
+        {
+            return;
+        }
         if (collision.collider.gameObject.tag == "Platform")
         {
             endHeight = transform.position.y;
