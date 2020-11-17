@@ -246,7 +246,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   groundHitPos: {fileID: 7393528137595041184}
-  groundHitSize: {x: 0.88, y: 0.19}
+  groundHitSize: {x: 0.89, y: 0.19}
 --- !u!114 &6694457431435372313
 MonoBehaviour:
   m_ObjectHideFlags: 0

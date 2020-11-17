@@ -128,7 +128,13 @@ public class EnemyCombat : MonoBehaviour
     public void CallDie()
     {
         if (!bossMode)
-            Invoke("die", 1f);
+        {
+            Invoke(nameof(die), 1f);
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
     }
 
     private void DeathKnockback()

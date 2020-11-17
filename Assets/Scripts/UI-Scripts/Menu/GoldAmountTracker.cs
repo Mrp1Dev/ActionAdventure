@@ -1,13 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class GoldAmountTracker : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
+    [SerializeField] private float goldAnimationSpeed;
+    private int currentGold;
+    private int shownGold;
     void Update()
     {
-        text.text = $"{SaveManager.SaveData.Gold}G";
+        currentGold = SaveManager.SaveData.Gold;
+        shownGold = Mathf.CeilToInt(Mathf.MoveTowards(shownGold,
+            currentGold,
+            ((currentGold - shownGold)/0.4f) * goldAnimationSpeed * Time.deltaTime));
+
+        text.text = $"{shownGold}G";
     }
 }

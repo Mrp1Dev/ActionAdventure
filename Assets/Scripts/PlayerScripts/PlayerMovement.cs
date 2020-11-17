@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask platform;
     [SerializeField] private Transform groundHitPos;
     [SerializeField] private Vector2 groundHitSize;
-
+    private Vector2 lastVelocity;
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (canMove && !GetComponent<PlayerCombat>().TakingHit && !GetComponent<PlayerRanged>().IsShooting) { movePlayer(); }
+        lastVelocity = rigidbody2D.velocity;
     }
 
     private void Update()
@@ -107,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             endHeight = transform.position.y;
         }
 
-        if (startHeight - endHeight > fallDamageHeight)
+        if (startHeight - endHeight > fallDamageHeight && Mathf.Abs(rigidbody2D.velocity.y - lastVelocity.y) > 1f )
         {
             GetComponent<PlayerCombat>()
                 .takeDamage(((startHeight - endHeight) - fallDamageHeight) * fallDamagePerMetre);
