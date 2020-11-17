@@ -144,7 +144,6 @@ public class EnemyCombat : MonoBehaviour
             - transform.position.sqrMagnitude)
             , 0f);
         rb.AddForce(knockbackVector);
-        CameraShaker.Instance.ShakeOnce(8f, 2f, 0.1f, 0.1f);
     }
 
     public IEnumerator Knockback()
